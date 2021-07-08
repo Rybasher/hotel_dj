@@ -1,0 +1,601 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/keyframes.css' %}">
+{% endblock %}
+
+{% block header %}
+    {% include 'include/header.html' %}
+{% endblock %}
+
+{% block modal_video %}
+    <div class="modal-video-wrapper">
+            <div class="modal-container"> <iframe src="https://www.youtube.com/embed/1uxW-hB-H2Q"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe> </div>
+        </div>
+{% endblock %}
+
+{% block content %}
+            <section class="section-main section">
+                <video autoplay muted loop id="myVideo" class="video">
+                    <source src="{% static 'img/play_bg.mp4' %}" type="video/mp4">
+                </video>
+                <div class="container">
+                <button class="full-video"> Watch full video </button>
+                <div class="search-wrapper">
+                    <form action="#" class="search">
+                        <div class="location-select-wrapper cust-sel">
+                            <div class="location-header">
+                                <p class="selected-location">Location</p> <span class="arrow"></span>
+                            </div>
+                            <div class="location-types">
+                                <label class="option-sel">
+                                    <span class="type-wrapper">
+                                        <input type="radio" name="date-field">
+                                        <span>Ekaterina</span>
+                                    </span>
+                                    <span class="street">(25 Grecheskaya str.)</span>
+                                </label>
+                                <label class="option-sel">
+                                    <span class="type-wrapper">
+                                        <input type="radio" name="date-field">
+                                        <span>Ekaterina II</span>
+                                    </span>
+                                    <span class="street">(7 Ekaterininskaya str.)</span>
+                                </label>
+                                <label class="option-sel">
+                                    <span class="type-wrapper">
+                                        <input type="radio" name="date-field">
+                                        <span>Both</span>
+                                    </span>
+                                    <span class="street"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="arriving-wrapper date-field"> <label> <input type="text" class="date-input"
+                                    placeholder="Arriving">
+                                <picture>
+                                    <source srcset="{% static 'img/header/calendar.svg' %}" type="image/webp"><img
+                                        src="{% static 'img/header/calendar.svg' %}" alt="callendar">
+                                </picture>
+                            </label> </div>
+                        <div class="leaving-wrapper date-field"> <label> <input type="text" class="date-input"
+                                    placeholder="Leaving">
+                               <picture>
+                                    <source srcset="{% static 'img/header/calendar.svg' %}" type="image/webp"><img
+                                        src="{% static 'img/header/calendar.svg' %}" alt="callendar">
+                                </picture>
+                            </label> </div>
+                        <div class="location-select-wrapper cust-sel">
+                            <div class="location-header">
+                                <p class="selected-location">Persons</p> <span class="arrow"></span>
+                            </div>
+                            <div class="location-types"> <label class="option-sel"> <span class="type-wrapper"> <input
+                                            type="radio" name="persons"> <span>1</span> </span> </label> <label
+                                    class="option-sel"> <span class="type-wrapper"> <input type="radio" name="persons">
+                                        <span>2</span> </span> </label> <label class="option-sel"> <span
+                                        class="type-wrapper"> <input type="radio" name="persons"> <span>2+child</span>
+                                    </span> </label> </div>
+                        </div>
+                        <button>Search</button>
+                    </form>
+                </div>
+                    <span class="next-section"></span>
+            </div>
+        </section>
+        <section class="section-currenTime section">
+            <div class="container">
+                <header class="container-header">
+                    <h3 class="container-header__title header-title"> Right Now in Odessa </h3>
+                </header>
+                <div class="container-body">
+                    <div class="date">
+                        <div class="date__mounth-wrapper date-item">
+                            <p class="date__mounth">17 June</span> </p> <small class="date__year">2021</small>
+                        </div> <span></span>
+                        <div class="date__hour-wrapper date-item">
+                            <p class="date__hour">11:00</p> <small class="date__hour-type">pm</small>
+                        </div> <span></span>
+                        <div class="date__weather-wrapper date-item">
+                            <p class="date__weather">23° C</p> <small class="date__weather-desc">sunny</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-hotels section">
+            <div class="hotel">
+                <div class="hotel__bg">
+                    <picture>
+                        <source srcset="{% static 'img/home/hotels/first.webp' %}" type="image/webp"><img
+                            src="{% static 'img/home/hotels/first.webp' %}" alt="Ekaterina">
+                    </picture>
+                </div>
+                <div class="hotel__main">
+                    <div class="hotel__title-wrapper">
+                        <h3 class="hotel__title">Hotel Ekaterina</h3>
+                        <p class="hotel__street">Grecheskaya street</p>
+                    </div> <a href="" class="hotel__details">Details</a>
+                </div>
+            </div>
+            <div class="hotel">
+                <div class="hotel__bg">
+                    <picture>
+                        <source srcset="{% static 'img/home/hotels/second.webp' %}" type="image/webp"><img
+                            src="{% static 'img/home/hotels/second.webp' %}" alt="Ekaterina2">
+                    </picture>
+                </div>
+                <div class="hotel__main">
+                    <div class="hotel__title-wrapper">
+                        <h3 class="hotel__title">Hotel Ekaterina</h3>
+                        <p class="hotel__street">Grecheskaya street</p>
+                    </div> <a href="" class="hotel__details">Details</a>
+                </div>
+            </div>
+        </section> <!-- CЛОЖНЫЙ БЛОК ЛОКАЦИИ. СДЕЛАТЬ В ПОНЕДЕЛЬНИК -->
+        <section class="section-locations section">
+            <div class="info">
+                <div class="container">
+                    <h2 class="heading"> BEST LOCATION FOR YOUR UNIQUE EXPERIENcE </h2>
+                    <div class="addresses-wrapper">
+                        <div class="address-item">
+                            <h3 class="address-item__heading">Hotel Ekaterina</h3> <a href=""
+                                class="address-item__number">+380 (68) 489 25 25</a>
+                            <p class="address-item__street">25 Grecheskaya str., Odessa</p>
+                        </div>
+                        <div class="address-item">
+                            <h3 class="address-item__heading">Hotel Ekaterina</h3> <a href=""
+                                class="address-item__number">+380 (68) 489 25 25</a>
+                            <p class="address-item__street">25 Grecheskaya str., Odessa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="map"></div>
+        </section>
+        <section class="section-sightseeing section">
+            <div class="swiper-container sight-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="{% static 'img/home/sightseeing/slide-image.webp' %}" type="image/webp"><img
+                                src="{% static 'img/home/sightseeing/slide-image.webp' %}" alt="slide-image">
+                        </picture>
+                    </div>
+                     <div class="swiper-slide">
+                        <picture>
+                            <source srcset="{% static 'img/home/sightseeing/slide-image.webp' %}" type="image/webp"><img
+                                src="{% static 'img/home/sightseeing/slide-image.webp' %}" alt="slide-image">
+                        </picture>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="sightseeing">
+                <div class="sightseeing__wrapper">
+                    <h2 class="sightseeing__heading">sightseeing & party</h2>
+                    <div class="sightseeing__desc">
+                        <p class="sightseeing__quest">Tourism, work or research?</p>
+                        <p class="sightseeing__info"> Whatever brought you to Odessa, we want to show you the city from
+                            its best side. Specially for these purposes, we have developed our own city guide, which
+                            will be useful for all of our guests.</p>
+                        <p class="sightseeing__info"> Forget all tourist clichés and travel like a local: best locations
+                            and up-to-date information, collected all together for you. </p>
+                    </div>
+                    <div class="sightseeing__links"> <a href="" class="sightseeing__link"> <span
+                                class="sightseeing__link-title">sightseeing guide</span> <span
+                                class="sightseeing__link-arrow"></span> </a> <a href="" class="sightseeing__link"> <span
+                                class="sightseeing__link-title">museums & theatres</span> <span
+                                class="sightseeing__link-arrow"></span> </a> <a href="" class="sightseeing__link"> <span
+                                class="sightseeing__link-title">museums & theatres</span> <span
+                                class="sightseeing__link-arrow"></span> </a> </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-room section">
+            <header class="section-room__header">
+                <div class="container">
+                    <h2 class="container__heading">ROOMS & APARTMENTS</h2>
+                </div>
+            </header>
+            <div class="swipers">
+                <div class="swiper-container room-images">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <picture>
+                                <source srcset="{% static 'img/home/rooms/first-slide.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/rooms/first-slide.webp' %}" alt="first-room">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                             <picture>
+                                <source srcset="{% static 'img/home/rooms/first-slide.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/rooms/first-slide.png' %}" alt="first-room">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                             <picture>
+                                <source srcset="{% static 'img/home/rooms/first-slide.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/rooms/first-slide.png' %}" alt="first-room">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                             <picture>
+                                <source srcset="{% static 'img/home/rooms/first-slide.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/rooms/first-slide.png' %}" alt="first-room">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                             <picture>
+                                <source srcset="{% static 'img/home/rooms/first-slide.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/rooms/first-slide.png' %}" alt="first-room">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                             <picture>
+                                <source srcset="{% static 'img/home/rooms/first-slide.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/rooms/first-slide.png' %}" alt="first-room">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <div class="swiper-container room-info">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="swiper-slide__header">
+                                <h3 class="swiper-slide__heading">Standard Suite</h3>
+                            </div>
+                            <p class="swiper-slide__info">Room of 15 m sq, batroom, comfortable for 2 people stay, has
+                                options of dark and lightwood furniture, with balcony</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-slide__header">
+                                <h3 class="swiper-slide__heading">Standard Suite2</h3>
+                            </div>
+                            <p class="swiper-slide__info">Room of 15 m sq, batroom, comfortable for 2 people stay, has
+                                options of dark and lightwood furniture, with balcony</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-slide__header">
+                                <h3 class="swiper-slide__heading">Standard Suite3</h3>
+                            </div>
+                            <p class="swiper-slide__info">Room of 15 m sq, batroom, comfortable for 2 people stay, has
+                                options of dark and lightwood furniture, with balcony</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-slide__header">
+                                <h3 class="swiper-slide__heading">Standard Suite4</h3>
+                            </div>
+                            <p class="swiper-slide__info">Room of 15 m sq, batroom, comfortable for 2 people stay, has
+                                options of dark and lightwood furniture, with balcony</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-slide__header">
+                                <h3 class="swiper-slide__heading">Standard Suite5</h3>
+                            </div>
+                            <p class="swiper-slide__info">Room of 15 m sq, batroom, comfortable for 2 people stay, has
+                                options of dark and lightwood furniture, with balcony</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-slide__header">
+                                <h3 class="swiper-slide__heading">Standard Suite6</h3>
+                            </div>
+                            <p class="swiper-slide__info">Room of 15 m sq, batroom, comfortable for 2 people stay, has
+                                options of dark and lightwood furniture, with balcony</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- СЛОЖНЫЙ БЛОК, СДЕЛАТЬ В ПОНЕДЕЛЬНИК -->
+        <section class="section-hosptality section" data-speed="0.03">
+            <div class="info">
+                <div class="container">
+                    <div class="item hosp-item">
+                        <h2 class="item__heading"> hospitality & service </h2>
+                        <p class="item__desc">Many years of experience in the hotel industry have helped us to notice
+                            and take into account all the details that will help provide you with a quality rest and
+                            carefree stay. It’s a common fact, that small hotels feel more like home. We definitely
+                            agree with this statement and everyday we put our hearts into making our dear guests feel
+                            comfortable and peaceful staing in our hotels. We are happy to provide you with the
+                            following services:</p>
+                        <ul class="item__list">
+                            <li class="item__li">High-quality laundry service </li>
+                            <li class="item__li">Fast and secure internet connection</li>
+                            <li class="item__li">Personal safe in each room</li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <h2 class="item__heading"> reastaurant & seaview </h2>
+                        <p class="item__desc">What about a breakfast with gorgeous and unique sea view? In Ekaterina
+                            hotel you can enjoy both your morning coffee and romantic dinner in our top floor
+                            restaurant. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="images">
+                <div class="images__wrapper">
+                    <div class="images__row hosp-row">
+                        <picture>
+                            <source srcset="{% static 'img/home/services/1.webp' %}" type="image/webp"><img
+                                src="{% static 'img/home/services/1.png' %}" alt="first" class="images__img">
+                        </picture>
+                        <picture>
+                            <source srcset="{% static 'img/home/services/2.webp' %}" type="image/webp"><img
+                                src="{% static 'img/home/services/2.png' %}" alt="sectond" class="images__img">
+                        </picture>
+                    </div>
+                    <div class="images__row hosp-row sec">
+                        <picture>
+                            <source srcset="{% static 'img/home/services/6.webp' %}" type="image/webp"><img
+                                src="{% static 'img/home/services/6.png' %}" alt="third" class="images__img">
+                        </picture>
+                        <picture>
+                            <source srcset="{% static 'img/home/services/5.webp' %}" type="image/webp"><img
+                                src="{% static 'img/home/services/5.png' %}" alt="fourth" class="images__img">
+                        </picture>
+                    </div>
+                    <div class="images__row hosp-row">
+                        <picture>
+                            <source srcset="{% static 'img/home/services/4.webp' %}" type="image/webp"><img
+                                src="{% static 'img/home/services/4.png' %}" alt="five" class="images__img">
+                        </picture>
+                        <picture>
+                            <source srcset="{% static 'img/home/services/3.webp' %}" type="image/webp"><img
+                                src="{% static 'img/home/services/3.png' %}" alt="six" class="images__img">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-reviews section">
+            <header class="reviews-header">
+                <h2 class="reviews-header__heading"> Reviews </h2>
+            </header>
+            <div class="swiper-container reviews-slider">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="slider-body">
+                            <div class="slider-body__photo">
+                                <picture>
+                                    <source srcset="{% static 'img/home/reviews/user.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/home/reviews/user.png' %}" alt="user">
+                                </picture>
+                            </div>
+                            <div class="slider-body__info">
+                                <p class="slider-body__heading">Greatest stay in my life!</p>
+                                <p class="slider-body__desc">Great location, really pleasant and clean rooms, but the
+                                    thing that makes this such a good place to stay are the staff. All of the people are
+                                    incredibly helpful and generous with their time and advice. </p>
+                            </div>
+                        </div>
+                        <div class="slider-stars">
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider-body">
+                            <div class="slider-body__photo">
+                                <picture>
+                                    <source srcset="{% static 'img/home/reviews/user.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/home/reviews/user.png' %}" alt="user">
+                                </picture>
+                            </div>
+                            <div class="slider-body__info">
+                                <p class="slider-body__heading">Greatest stay in my life!</p>
+                                <p class="slider-body__desc">Great location, really pleasant and clean rooms, but the
+                                    thing that makes this such a good place to stay are the staff. All of the people are
+                                    incredibly helpful and generous with their time and advice. </p>
+                            </div>
+                        </div>
+                        <div class="slider-stars">
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider-body">
+                            <div class="slider-body__photo">
+                                <picture>
+                                    <source srcset="{% static 'img/home/reviews/user.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/home/reviews/user.png' %}" alt="user">
+                                </picture>
+                            </div>
+                            <div class="slider-body__info">
+                                <p class="slider-body__heading">Greatest stay in my life!</p>
+                                <p class="slider-body__desc">Great location, really pleasant and clean rooms, but the
+                                    thing that makes this such a good place to stay are the staff. All of the people are
+                                    incredibly helpful and generous with their time and advice. </p>
+                            </div>
+                        </div>
+                        <div class="slider-stars">
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider-body">
+                            <div class="slider-body__photo">
+                                <picture>
+                                    <source srcset="{% static 'img/home/reviews/user.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/home/reviews/user.png' %}" alt="user">
+                                </picture>
+                            </div>
+                            <div class="slider-body__info">
+                                <p class="slider-body__heading">Greatest stay in my life!</p>
+                                <p class="slider-body__desc">Great location, really pleasant and clean rooms, but the
+                                    thing that makes this such a good place to stay are the staff. All of the people are
+                                    incredibly helpful and generous with their time and advice. </p>
+                            </div>
+                        </div>
+                        <div class="slider-stars">
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider-body">
+                            <div class="slider-body__photo">
+                                <picture>
+                                    <source srcset="{% static 'img/home/reviews/user.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/home/reviews/user.png' %}" alt="user">
+                                </picture>
+                            </div>
+                            <div class="slider-body__info">
+                                <p class="slider-body__heading">Greatest stay in my life!</p>
+                                <p class="slider-body__desc">Great location, really pleasant and clean rooms, but the
+                                    thing that makes this such a good place to stay are the staff. All of the people are
+                                    incredibly helpful and generous with their time and advice. </p>
+                            </div>
+                        </div>
+                        <div class="slider-stars">
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider-body">
+                            <div class="slider-body__photo">
+                                <picture>
+                                    <source srcset="{% static 'img/home/reviews/user.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/home/reviews/user.png' %}" alt="user">
+                                </picture>
+                            </div>
+                            <div class="slider-body__info">
+                                <p class="slider-body__heading">Greatest stay in my life!</p>
+                                <p class="slider-body__desc">Great location, really pleasant and clean rooms, but the
+                                    thing that makes this such a good place to stay are the staff. All of the people are
+                                    incredibly helpful and generous with their time and advice. </p>
+                            </div>
+                        </div>
+                        <div class="slider-stars">
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                            <picture>
+                                <source srcset="{% static 'img/home/reviews/Star.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/home/reviews/Star.png' %}" alt="star">
+                            </picture>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
