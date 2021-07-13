@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block style %}
-    <link rel="stylesheet" href="{% static 'css/header.css' %}">
-    <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <link rel="stylesheet" href="{% static 'css/keyframes.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blocks/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/adds/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pages/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/adds/keyframes.css' %}">
 {% endblock %}
 
 {% block header %}
@@ -598,4 +598,72 @@
 {% endblock %}
 
 {% block scripts %}
+    <script>
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 46.4871177, lng: 30.7366792 },
+        zoom: 16,
+        mapId: '41ff5b65aa282771'
+    });
+
+
+    {# LOCATION MARKS #}
+    {#  OPERN  #}
+    let operniy =
+        "<div class='info-window'>" +
+        "<img src='{% static 'img/home/locations/placec/operniy.png' %}' class='info-window__img'>" +
+        "</div>";
+
+    const opern_mark = new google.maps.Marker({
+        position: { lat: 46.4871177, lng: 30.7366792 },
+        map,
+        icon: {
+            url: "{% static 'img/home/locations/circle.svg' %}",
+        },
+        animation: google.maps.Animation.DROP,
+    });
+    const opern_window = new google.maps.InfoWindow({
+        content: operniy,
+    });
+
+    opern_mark.addListener("mouseover", () => {
+        opern_window.open(map, opern_mark);
+    });
+    opern_mark.addListener("mouseout", () => {
+        opern_window.close(map, opern_mark);
+    })
+    {# OPERN #}
+
+    {#  GORSAD  #}
+    let gorsad =
+        "<div class='info-window'>" +
+        "<img src='{% static 'img/home/locations/placec/gorsad.jpg' %}' class='info-window__img'>" +
+        "</div>";
+    const gorsad_mark = new google.maps.Marker({
+        position: { lat: 46.4832664, lng: 30.7355324 },
+        map,
+        icon: {
+            url: "{% static 'img/home/locations/circle.svg' %}",
+        },
+        animation: google.maps.Animation.DROP,
+    });
+    const gorsad_window = new google.maps.InfoWindow({
+        content: gorsad,
+    });
+     gorsad_mark.addListener("mouseover", () => {
+        gorsad_window.open(map, gorsad_mark);
+    });
+    gorsad_mark.addListener("mouseout", () => {
+        gorsad_window.close(map, gorsad_mark);
+    })
+
+
+
+
+
+}
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClxUNAWX-_r3gkiNhydlFQ_NvM1McdCF8&map_ids=8c7dbff538ece7d&callback=initMap"
+    type="text/javascript"></script>
 {% endblock %}

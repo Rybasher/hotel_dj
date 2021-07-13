@@ -1,0 +1,290 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/blocks/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/adds/lightgallery.css' %}">
+    <link rel="stylesheet" href="{% static 'css/adds/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pages/hotel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pages/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/adds/keyframes.css' %}">
+{% endblock %}
+
+{% block header %}
+    {% include 'include/header.html' %}
+{% endblock %}
+
+{% block modal_video %}
+
+{% endblock %}
+
+{% block content %}
+
+      <section class="section-main section hotel">
+            <div class="main-wrapper">
+                <div class="slider ">
+                    <div class="swiper-container swiper-hotel">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <picture>
+                                    <source srcset="{% static 'img/hotel/main/slide1.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/hotel/main/slide1.png' %}" alt="slide" class="swiper-slide__image">
+                                </picture>
+                            </div>
+                              <div class="swiper-slide">
+                                <picture>
+                                    <source srcset="{% static 'img/hotel/main/slide1.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/hotel/main/slide1.png' %}" alt="slide" class="swiper-slide__image">
+                                </picture>
+                            </div>
+                        </div> <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="container-head">
+                        <h2 class="info__heading"> hotel ekaterina: YOUR COMFORTABLE & UNIQUE STAY </h2>
+                        <p class="info__desc"> Spacious rooms and a large selection of apartments are an excellent
+                            choice for a family or a large group. Each room is individually designed, allowing you to
+                            choose the atmosphere of your stay that suits you best. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="search-wrapper hotel">
+                    <form action="#" class="search">
+                        <div class="location-select-wrapper cust-sel">
+                            <div class="location-header">
+                                <p class="selected-location">Location</p> <span class="arrow"></span>
+                            </div>
+                            <div class="location-types"> <label class="option-sel"> <span class="type-wrapper"> <input
+                                            type="radio" name="date-field"> <span>Ekaterina</span> </span> <span
+                                        class="street">(25 Grecheskaya str.)</span> </label> <label class="option-sel">
+                                    <span class="type-wrapper"> <input type="radio" name="date-field"> <span>Ekaterina
+                                            II</span> </span> <span class="street">(7 Ekaterininskaya str.)</span>
+                                </label> <label class="option-sel"> <span class="type-wrapper"> <input type="radio"
+                                            name="date-field"> <span>Both</span> </span> <span class="street"></span>
+                                </label> </div>
+                        </div>
+                        <div class="arriving-wrapper date-field"> <label> <input type="text" class="date-input"
+                                    placeholder="Arriving">
+                                <picture>
+                                    <source srcset="{% static 'img/header/calendar.svg' %}" type="image/webp"><img
+                                        src="{% static 'img/header/calendar.svg' %}" alt="callendar">
+                                </picture>
+                            </label> </div>
+                        <div class="leaving-wrapper date-field"> <label> <input type="text" class="date-input"
+                                    placeholder="Leaving">
+                                 <picture>
+                                    <source srcset="{% static 'img/header/calendar.svg' %}" type="image/webp"><img
+                                        src="{% static 'img/header/calendar.svg' %}" alt="callendar">
+                                </picture>
+                            </label> </div>
+                        <div class="location-select-wrapper cust-sel">
+                            <div class="location-header">
+                                <p class="selected-location">Persons</p> <span class="arrow"></span>
+                            </div>
+                            <div class="location-types"> <label class="option-sel"> <span class="type-wrapper"> <input
+                                            type="radio" name="persons"> <span>1</span> </span> </label> <label
+                                    class="option-sel"> <span class="type-wrapper"> <input type="radio" name="persons">
+                                        <span>2</span> </span> </label> <label class="option-sel"> <span
+                                        class="type-wrapper"> <input type="radio" name="persons"> <span>2+child</span>
+                                    </span> </label> </div>
+                        </div> <button>Search</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="section-rooms section">
+            <div class="container">
+                <header class="container-header">
+                    <h2 class="title">ROOMS & APARTMENTS</h2>
+                </header>
+                <div class="container-body">
+                    <div class="room-item">
+                        <div class="room-item__header">
+                            <div class="swiper-container room-image">
+                                <div class="swiper-wrapper lightgallery" id="lightgallery">
+                                    <div class="swiper-slide" data-src="{% static 'img/hotel/rooms/first.png' %}">
+                                        <picture>
+                                            <source srcset="{% static 'img/hotel/rooms/first.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/hotel/rooms/first.png' %}" alt="item">
+                                        </picture>
+                                    </div>
+                                    <div class="swiper-slide" data-src="{% static 'img/hotel/rooms/first.png' %}">
+                                        <picture>
+                                            <source srcset="{% static 'img/hotel/rooms/first.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/hotel/rooms/first.png' %}" alt="item">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="room-item__body">
+                            <div class="room-item__body-header">
+                                <div class="room-item__room-name">
+                                    <p class="room-item__room-title">Double Standart Siute</p>
+                                    <p class="room-item__room-desc">20 m<sup>2</sup> room with balcony</p>
+                                </div> <button class="room-item__book">Book Now</button>
+                            </div>
+                            <div class="room-item__body-info">
+                                <div class="room-item__body-desc"> Comfortable room with a large French bed or twin beds
+                                    with orthopedic mattresses, the rooms view into the yard or the city. Elegant rooms
+                                    with modern décor. </div>
+                                <ul class="room-item__body-list">
+                                    <li class="room-item__body-li">
+                                        <ul>
+                                            <li>air conditioning</li>
+                                            <li> wi-fi</li>
+                                            <li>mini safe</li>
+                                        </ul>
+                                    </li>
+                                    <li class="room-item__body-li">
+                                        <ul>
+                                            <li>air conditioning</li>
+                                            <li> wi-fi</li>
+                                            <li>mini safe</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room-item">
+                        <div class="room-item__header">
+                            <div class="swiper-container room-image">
+                                <div class="swiper-wrapper lightgallery" id="lightgallery">
+                                    <div class="swiper-slide" data-src="{% static 'img/hotel/rooms/first.png' %}">
+                                       <picture>
+                                            <source srcset="{% static 'img/hotel/rooms/first.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/hotel/rooms/first.png' %}" alt="item">
+                                        </picture>
+                                    </div>
+                                    <div class="swiper-slide" data-src="{% static 'img/hotel/rooms/first.png' %}">
+                                       <picture>
+                                            <source srcset="{% static 'img/hotel/rooms/first.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/hotel/rooms/first.png' %}" alt="item">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="room-item__body">
+                            <div class="room-item__body-header">
+                                <div class="room-item__room-name">
+                                    <p class="room-item__room-title">Double Standart Siute</p>
+                                    <p class="room-item__room-desc">20 m<sup>2</sup> room with balcony</p>
+                                </div> <button class="room-item__book">Book Now</button>
+                            </div>
+                            <div class="room-item__body-info">
+                                <div class="room-item__body-desc"> Comfortable room with a large French bed or twin beds
+                                    with orthopedic mattresses, the rooms view into the yard or the city. Elegant rooms
+                                    with modern décor. </div>
+                                <ul class="room-item__body-list">
+                                    <li class="room-item__body-li">
+                                        <ul>
+                                            <li>air conditioning</li>
+                                            <li> wi-fi</li>
+                                            <li>mini safe</li>
+                                        </ul>
+                                    </li>
+                                    <li class="room-item__body-li">
+                                        <ul>
+                                            <li>air conditioning</li>
+                                            <li> wi-fi</li>
+                                            <li>mini safe</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room-item">
+                        <div class="room-item__header">
+                            <div class="swiper-container room-image">
+                                <div class="swiper-wrapper lightgallery" id="lightgallery">
+                                    <div class="swiper-slide" data-src="{% static 'img/hotel/rooms/first.png' %}">
+                                        <picture>
+                                            <source srcset="{% static 'img/hotel/rooms/first.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/hotel/rooms/first.png' %}" alt="item">
+                                        </picture>
+                                    </div>
+                                    <div class="swiper-slide" data-src="{% static 'img/hotel/rooms/first.png' %}">
+                                        <picture>
+                                            <source srcset="{% static 'img/hotel/rooms/first.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/hotel/rooms/first.png' %}" alt="item">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="room-item__body">
+                            <div class="room-item__body-header">
+                                <div class="room-item__room-name">
+                                    <p class="room-item__room-title">Double Standart Siute</p>
+                                    <p class="room-item__room-desc">20 m<sup>2</sup> room with balcony</p>
+                                </div> <button class="room-item__book">Book Now</button>
+                            </div>
+                            <div class="room-item__body-info">
+                                <div class="room-item__body-desc"> Comfortable room with a large French bed or twin beds
+                                    with orthopedic mattresses, the rooms view into the yard or the city. Elegant rooms
+                                    with modern décor. </div>
+                                <ul class="room-item__body-list">
+                                    <li class="room-item__body-li">
+                                        <ul>
+                                            <li>air conditioning</li>
+                                            <li> wi-fi</li>
+                                            <li>mini safe</li>
+                                        </ul>
+                                    </li>
+                                    <li class="room-item__body-li">
+                                        <ul>
+                                            <li>air conditioning</li>
+                                            <li> wi-fi</li>
+                                            <li>mini safe</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-balcony section">
+            <header class="section-header">
+                <h1> The longest balcony in Europe </h1>
+            </header>
+            <div class="container">
+                <div class="info">
+                    <p class="info__text">The building in which the hotel is located is a real record holder. At the
+                        height of the third floor, it is surrounded by the longest continuous balcony in Europe, the
+                        total length of which is ??? meters. </p>
+                    <p class="info__text"> The beautiful four-storey building was constructed in 1905 by the architect
+                        Yuri Dmitrenko by order of the wealthy Odessa houseowner Matvey Mavrokordato. From the very
+                        beginning, it functioned as a Revenue house, and its first tenants were the city intelligentsia:
+                        doctors and court workers. </p>
+                    <p class="info__text"> While staying at the Ekaterina Hotel, you have the opportunity to become
+                        closer to the history of the city, to feel like you are in the place of the city nobility of the
+                        tsarist times. </p>
+                </div>
+                <div class="image">
+                    <picture>
+                        <source srcset="{% static 'img/hotel/rooms/img.webp' %}" type="image/webp">
+                        <img src="{% static 'img/hotel/rooms/img.png' %}" alt="image" class="image__img">
+                    </picture>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}
+
+{% block scripts %}
+
+
+{% endblock %}

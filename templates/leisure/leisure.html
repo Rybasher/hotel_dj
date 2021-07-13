@@ -1,0 +1,633 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/blocks/header-white.css' %}">
+    <link rel="stylesheet" href="{% static 'css/adds/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pages/leisure.css' %}">
+    <link rel="stylesheet" href="{% static 'css/adds/keyframes.css' %}">
+{% endblock %}
+
+{% block header %}
+    {% include 'include/header-white.html' %}
+{% endblock %}
+
+{% block modal_video %}
+
+{% endblock %}
+
+{% block content %}
+
+      <section class="section-leisure section">
+            <header class="section-header">
+                <div class="leisure-buttons-wrapper"> <button class="leisure-button" id="guide">sightseeing
+                        guide</button> <button class="leisure-button active" id="museums">museums & theatres</button>
+                    <button class="leisure-button" id="nightlife">nightlife guide</button> </div>
+            </header>
+            <div class="section-body">
+                <div class="leisure-item" data-tab="guide">
+                    <div class="item _usual">
+                        <div class="item__header"> </div>
+                        <div class="item__body">
+                            <div class="image">
+                                <picture>
+                                    <source srcset="{% static 'img/leisure/item1/exp.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/leisure/item1/exp.png' %}" alt="exp" class="image__img">
+                                </picture>
+                            </div>
+                            <div class="info">
+                                <h3 class="heading">Odessa Museum of Western and Eastern Art</h3>
+                                <p class="desc">One of the best art museums in Ukraine, the collection of which has a
+                                    wide range of works of artistic and cultural value. The museum collection is divided
+                                    into three main sections: </p>
+                                <ul class="list">
+                                    <li class="li"> Department of Western European Art </li>
+                                    <li class="li"> Art of the countries of the Middle and Far East </li>
+                                    <li class="li"> Department of Antique Art </li>
+                                </ul>
+                                <div class="contacts">
+                                    <div class="contacts__add">
+                                        <picture>
+                                            <source srcset="{% static 'img/leisure/item1/add.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/leisure/item1/add.png' %}" alt="add" class="contacts__add-img">
+                                        </picture>
+                                    </div>
+                                    <div class="contacts__items">
+                                        <div class="contacts__item">
+                                            <p class="contacts__item-text">ул. Пушкинская, 9</p>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                        <div class="contacts__item"> <a href="tel:+380487224815"
+                                                class="contacts__item-text">+38 048 722 48 15</a>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item heading">
+                        <div class="item__header">
+                            <picture>
+                                <source srcset="{% static 'img/leisure/item2/head.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/leisure/item2/head.png' %}" alt="head">
+                            </picture>
+                        </div>
+                        <div class="item__body">
+                            <div class="image">
+                                <picture>
+                                    <source srcset="{% static 'img/leisure/item1/exp.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/leisure/item1/exp.png' %}" alt="exp" class="image__img">
+                                </picture>
+                            </div>
+                            <div class="info">
+                                <h3 class="heading">Odessa Museum of Western and Eastern Art</h3>
+                                <p class="desc">One of the best art museums in Ukraine, the collection of which has a
+                                    wide range of works of artistic and cultural value. The museum collection is divided
+                                    into three main sections: </p>
+                                <ul class="list">
+                                    <li class="li"> Department of Western European Art </li>
+                                    <li class="li"> Art of the countries of the Middle and Far East </li>
+                                    <li class="li"> Department of Antique Art </li>
+                                </ul>
+                                <div class="contacts">
+                                    <div class="contacts__add">
+                                        <picture>
+                                            <source srcset="{% static 'img/leisure/item1/add.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/leisure/item1/add.png' %}" alt="add" class="contacts__add-img">
+                                        </picture>
+                                    </div>
+                                    <div class="contacts__items">
+                                        <div class="contacts__item">
+                                            <p class="contacts__item-text">ул. Пушкинская, 9</p>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                        <div class="contacts__item"> <a href="tel:+380487224815"
+                                                class="contacts__item-text">+38 048 722 48 15</a>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item _usual">
+                        <div class="item__header"> </div>
+                        <div class="item__body">
+                            <div class="image">
+                                <picture>
+                                    <source srcset="{% static 'img/leisure/item1/exp.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/leisure/item1/exp.png' %}" alt="exp" class="image__img">
+                                </picture>
+                            </div>
+                            <div class="info">
+                                <h3 class="heading">Odessa Museum of Western and Eastern Art</h3>
+                                <p class="desc">One of the best art museums in Ukraine, the collection of which has a
+                                    wide range of works of artistic and cultural value. The museum collection is divided
+                                    into three main sections: </p>
+                                <ul class="list">
+                                    <li class="li"> Department of Western European Art </li>
+                                    <li class="li"> Art of the countries of the Middle and Far East </li>
+                                    <li class="li"> Department of Antique Art </li>
+                                </ul>
+                                <div class="contacts">
+                                    <div class="contacts__add">
+                                        <picture>
+                                            <source srcset="{% static 'img/leisure/item1/add.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/leisure/item1/add.png' %}" alt="add" class="contacts__add-img">
+                                        </picture>
+                                    </div>
+                                    <div class="contacts__items">
+                                        <div class="contacts__item">
+                                            <p class="contacts__item-text">ул. Пушкинская, 9</p>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                        <div class="contacts__item"> <a href="tel:+380487224815"
+                                                class="contacts__item-text">+38 048 722 48 15</a>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="last-item">
+                        <div class="last-item__header">
+                            <div class="last-item__add-image">
+                                <picture>
+                                    <source srcset="{% static 'img/leisure/item4/add.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/leisure/item4/add.png' %}" alt="add">
+                                </picture>
+                            </div>
+                            <div class="swiper-container museum-swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <picture>
+                                            <source srcset="{% static 'img/leisure/item4/exp.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/leisure/item4/exp.png' %}" alt="">
+                                        </picture>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <picture>
+                                            <source srcset="{% static 'img/leisure/item4/exp.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/leisure/item4/exp.png' %}" alt="">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="last-item__body">
+                            <div class="contacts">
+                                <div class="contacts-item">
+                                    <picture>
+                                        <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                            src="{% static 'img/leisure/loc.svg' %}" alt="loc">
+                                    </picture>
+                                    <p class="add-info">ул. Леонтовича, 5</p>
+                                </div>
+                                <div class="contacts-item">
+                                    <picture>
+                                        <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                            src="{% static 'img/leisure/loc.svg' %}" alt="loc">
+                                    </picture> <a href="tel:+380487591018" class="add-info">+38 048 759 10 18</a>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h3 class="heading">Modern Art Museum of Odessa</h3>
+                                <p class="desc">The Museum of Odessa Modern Art was created on the 10th of April 2008 by
+                                    a young businessman, intellectual and patron of the arts Vadim Morokhovsky. It is
+                                    based on the renowned collector Mikhail Knobel’s unique collection of the masters of
+                                    the second wave of the Odessa avant-garde. </p>
+                                <p class="desc"> This collection has been considerably enlarged and complemented. At
+                                    present the MоOMA exhibits the art of leading painters and sculptors of Odessa of
+                                    the turn of the XXI century. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="leisure-item active" data-tab="museums">
+                    <div class="item _usual">
+                        <div class="item__header"> </div>
+                        <div class="item__body">
+                            <div class="image">
+                                <picture>
+                                    <source srcset="{% static 'img/leisure/item2/exp.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/leisure/item2/exp.png' %}" alt="exp" class="image__img">
+                                </picture>
+                            </div>
+                            <div class="info">
+                                <h3 class="heading">Odessa Museum of Western and Eastern Art</h3>
+                                <p class="desc">One of the best art museums in Ukraine, the collection of which has a
+                                    wide range of works of artistic and cultural value. The museum collection is divided
+                                    into three main sections: </p>
+                                <ul class="list">
+                                    <li class="li"> Department of Western European Art </li>
+                                    <li class="li"> Art of the countries of the Middle and Far East </li>
+                                    <li class="li"> Department of Antique Art </li>
+                                </ul>
+                                <div class="contacts">
+                                    <div class="contacts__add">
+                                        <picture>
+                                            <source srcset="{% static 'img/leisure/item1/add.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/leisure/item1/add.png' %}" alt="add" class="contacts__add-img">
+                                        </picture>
+                                    </div>
+                                    <div class="contacts__items">
+                                        <div class="contacts__item">
+                                            <p class="contacts__item-text">ул. Пушкинская, 9</p>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                        <div class="contacts__item"> <a href="tel:+380487224815"
+                                                class="contacts__item-text">+38 048 722 48 15</a>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item heading">
+                        <div class="item__header">
+                            <picture>
+                                <source srcset="{% static 'img/leisure/item2/head.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/leisure/item2/head.png' %}" alt="head">
+                            </picture>
+                        </div>
+                        <div class="item__body">
+                            <div class="image">
+                                <picture>
+                                    <source srcset="{% static 'img/leisure/item2/exp.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/leisure/item2/exp.png' %}" alt="exp" class="image__img">
+                                </picture>
+                            </div>
+                            <div class="info">
+                                <h3 class="heading">Odessa Museum of Western and Eastern Art</h3>
+                                <p class="desc">One of the best art museums in Ukraine, the collection of which has a
+                                    wide range of works of artistic and cultural value. The museum collection is divided
+                                    into three main sections: </p>
+                                <ul class="list">
+                                    <li class="li"> Department of Western European Art </li>
+                                    <li class="li"> Art of the countries of the Middle and Far East </li>
+                                    <li class="li"> Department of Antique Art </li>
+                                </ul>
+                                <div class="contacts">
+                                    <div class="contacts__add">
+                                        <picture>
+                                            <source srcset="{% static 'img/leisure/item1/add.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/leisure/item1/add.png' %}" alt="add" class="contacts__add-img">
+                                        </picture>
+                                    </div>
+                                    <div class="contacts__items">
+                                        <div class="contacts__item">
+                                            <p class="contacts__item-text">ул. Пушкинская, 9</p>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                        <div class="contacts__item"> <a href="tel:+380487224815"
+                                                class="contacts__item-text">+38 048 722 48 15</a>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item _usual">
+                        <div class="item__header"> </div>
+                        <div class="item__body">
+                            <div class="image">
+                                <picture>
+                                    <source srcset="{% static 'img/leisure/item2/exp.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/leisure/item2/exp.png' %}" alt="exp" class="image__img">
+                                </picture>
+                            </div>
+                            <div class="info">
+                                <h3 class="heading">Odessa Museum of Western and Eastern Art</h3>
+                                <p class="desc">One of the best art museums in Ukraine, the collection of which has a
+                                    wide range of works of artistic and cultural value. The museum collection is divided
+                                    into three main sections: </p>
+                                <ul class="list">
+                                    <li class="li"> Department of Western European Art </li>
+                                    <li class="li"> Art of the countries of the Middle and Far East </li>
+                                    <li class="li"> Department of Antique Art </li>
+                                </ul>
+                                <div class="contacts">
+                                    <div class="contacts__add">
+                                        <picture>
+                                            <source srcset="{% static 'img/leisure/item1/add.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/leisure/item1/add.png' %}" alt="add" class="contacts__add-img">
+                                        </picture>
+                                    </div>
+                                    <div class="contacts__items">
+                                        <div class="contacts__item">
+                                            <p class="contacts__item-text">ул. Пушкинская, 9</p>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                        <div class="contacts__item"> <a href="tel:+380487224815"
+                                                class="contacts__item-text">+38 048 722 48 15</a>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="last-item">
+                        <div class="last-item__header">
+                            <div class="last-item__add-image">
+                                <picture>
+                                    <source srcset="{% static 'img/leisure/item4/add.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/leisure/item4/add.png' %}" alt="add">
+                                </picture>
+                            </div>
+                            <div class="swiper-container museum-swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <picture>
+                                            <source srcset="{% static 'img/leisure/item4/exp.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/leisure/item4/exp.png' %}" alt="">
+                                        </picture>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <picture>
+                                            <source srcset="{% static 'img/leisure/item4/exp.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/leisure/item4/exp.png' %}" alt="">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="last-item__body">
+                            <div class="contacts">
+                                <div class="contacts-item">
+                                    <picture>
+                                        <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                            src="{% static 'img/leisure/loc.svg' %}" alt="loc">
+                                    </picture>
+                                    <p class="add-info">ул. Леонтовича, 5</p>
+                                </div>
+                                <div class="contacts-item">
+                                    <picture>
+                                        <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                            src="{% static 'img/leisure/loc.svg' %}" alt="loc">
+                                    </picture> <a href="tel:+380487591018" class="add-info">+38 048 759 10 18</a>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h3 class="heading">Modern Art Museum of Odessa</h3>
+                                <p class="desc">The Museum of Odessa Modern Art was created on the 10th of April 2008 by
+                                    a young businessman, intellectual and patron of the arts Vadim Morokhovsky. It is
+                                    based on the renowned collector Mikhail Knobel’s unique collection of the masters of
+                                    the second wave of the Odessa avant-garde. </p>
+                                <p class="desc"> This collection has been considerably enlarged and complemented. At
+                                    present the MоOMA exhibits the art of leading painters and sculptors of Odessa of
+                                    the turn of the XXI century. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="leisure-item" data-tab="nightlife">
+                    <div class="item _usual">
+                        <div class="item__header"> </div>
+                        <div class="item__body">
+                            <div class="image">
+                                <picture>
+                                    <source srcset="{% static 'img/leisure/item3/exp.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/leisure/item3/exp.png' %}" alt="exp" class="image__img">
+                                </picture>
+                            </div>
+                            <div class="info">
+                                <h3 class="heading">Odessa Museum of Western and Eastern Art</h3>
+                                <p class="desc">One of the best art museums in Ukraine, the collection of which has a
+                                    wide range of works of artistic and cultural value. The museum collection is divided
+                                    into three main sections: </p>
+                                <ul class="list">
+                                    <li class="li"> Department of Western European Art </li>
+                                    <li class="li"> Art of the countries of the Middle and Far East </li>
+                                    <li class="li"> Department of Antique Art </li>
+                                </ul>
+                                <div class="contacts">
+                                    <div class="contacts__add">
+                                        <picture>
+                                            <source srcset="{% static 'img/leisure/item1/add.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/leisure/item1/add.png' %}" alt="add" class="contacts__add-img">
+                                        </picture>
+                                    </div>
+                                    <div class="contacts__items">
+                                        <div class="contacts__item">
+                                            <p class="contacts__item-text">ул. Пушкинская, 9</p>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                        <div class="contacts__item"> <a href="tel:+380487224815"
+                                                class="contacts__item-text">+38 048 722 48 15</a>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item heading">
+                        <div class="item__header">
+                            <picture>
+                                <source srcset="{% static 'img/leisure/item2/head.webp' %}" type="image/webp"><img
+                                    src="{% static 'img/leisure/item2/head.png' %}" alt="head">
+                            </picture>
+                        </div>
+                        <div class="item__body">
+                            <div class="image">
+                                <picture>
+                                    <source srcset="{% static 'img/leisure/item1/exp.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/leisure/item1/exp.png' %}" alt="exp" class="image__img">
+                                </picture>
+                            </div>
+                            <div class="info">
+                                <h3 class="heading">Odessa Museum of Western and Eastern Art</h3>
+                                <p class="desc">One of the best art museums in Ukraine, the collection of which has a
+                                    wide range of works of artistic and cultural value. The museum collection is divided
+                                    into three main sections: </p>
+                                <ul class="list">
+                                    <li class="li"> Department of Western European Art </li>
+                                    <li class="li"> Art of the countries of the Middle and Far East </li>
+                                    <li class="li"> Department of Antique Art </li>
+                                </ul>
+                                <div class="contacts">
+                                    <div class="contacts__add">
+                                        <picture>
+                                            <source srcset="{% static 'img/leisure/item1/add.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/leisure/item1/add.png' %}" alt="add" class="contacts__add-img">
+                                        </picture>
+                                    </div>
+                                    <div class="contacts__items">
+                                        <div class="contacts__item">
+                                            <p class="contacts__item-text">ул. Пушкинская, 9</p>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                        <div class="contacts__item"> <a href="tel:+380487224815"
+                                                class="contacts__item-text">+38 048 722 48 15</a>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item _usual">
+                        <div class="item__header"> </div>
+                        <div class="item__body">
+                            <div class="image">
+                                <picture>
+                                    <source srcset="{% static 'img/leisure/item1/exp.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/leisure/item1/exp.png' %}" alt="exp" class="image__img">
+                                </picture>
+                            </div>
+                            <div class="info">
+                                <h3 class="heading">Odessa Museum of Western and Eastern Art</h3>
+                                <p class="desc">One of the best art museums in Ukraine, the collection of which has a
+                                    wide range of works of artistic and cultural value. The museum collection is divided
+                                    into three main sections: </p>
+                                <ul class="list">
+                                    <li class="li"> Department of Western European Art </li>
+                                    <li class="li"> Art of the countries of the Middle and Far East </li>
+                                    <li class="li"> Department of Antique Art </li>
+                                </ul>
+                                <div class="contacts">
+                                    <div class="contacts__add">
+                                        <picture>
+                                            <source srcset="{% static 'img/leisure/item1/add.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/leisure/item1/add.png' %}" alt="add" class="contacts__add-img">
+                                        </picture>
+                                    </div>
+                                    <div class="contacts__items">
+                                        <div class="contacts__item">
+                                            <p class="contacts__item-text">ул. Пушкинская, 9</p>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                        <div class="contacts__item"> <a href="tel:+380487224815"
+                                                class="contacts__item-text">+38 048 722 48 15</a>
+                                            <picture>
+                                                <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/leisure/loc.svg' %}" alt="loc" class="contacts__item-img">
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="last-item">
+                        <div class="last-item__header">
+                            <div class="last-item__add-image">
+                                <picture>
+                                    <source srcset="{% static 'img/leisure/item4/add.webp' %}" type="image/webp"><img
+                                        src="{% static 'img/leisure/item4/add.png' %}" alt="add">
+                                </picture>
+                            </div>
+                            <div class="swiper-container museum-swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <picture>
+                                            <source srcset="{% static 'img/leisure/item4/exp.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/leisure/item4/exp.png' %}" alt="">
+                                        </picture>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <picture>
+                                            <source srcset="{% static 'img/leisure/item4/exp.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/leisure/item4/exp.png' %}" alt="">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="last-item__body">
+                            <div class="contacts">
+                                <div class="contacts-item">
+                                    <picture>
+                                        <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                            src="{% static 'img/leisure/loc.svg' %}" alt="loc">
+                                    </picture>
+                                    <p class="add-info">ул. Леонтовича, 5</p>
+                                </div>
+                                <div class="contacts-item">
+                                    <picture>
+                                        <source srcset="{% static 'img/leisure/loc.svg' %}" type="image/webp"><img
+                                            src="{% static 'img/leisure/loc.svg' %}" alt="loc">
+                                    </picture> <a href="tel:+380487591018" class="add-info">+38 048 759 10 18</a>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h3 class="heading">Modern Art Museum of Odessa</h3>
+                                <p class="desc">The Museum of Odessa Modern Art was created on the 10th of April 2008 by
+                                    a young businessman, intellectual and patron of the arts Vadim Morokhovsky. It is
+                                    based on the renowned collector Mikhail Knobel’s unique collection of the masters of
+                                    the second wave of the Odessa avant-garde. </p>
+                                <p class="desc"> This collection has been considerably enlarged and complemented. At
+                                    present the MоOMA exhibits the art of leading painters and sculptors of Odessa of
+                                    the turn of the XXI century. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}
+
+{% block scripts %}
+
+
+{% endblock %}

@@ -58,7 +58,7 @@
 .header .menu__burger-icon span {
     width: 100%;
     height: 2px;
-    background: #fff;
+    background: #000;
     position: absolute;
     left: 0;
     top: 50%;
@@ -99,7 +99,7 @@
 .header .menu__burger-text {
     font-family: Philosopher, sans-serif;
     font-size: 24px;
-    color: #fff
+    color: #000
 }
 
 .header .menu__burger-text.active {
@@ -147,7 +147,7 @@
         width: 100%;
         height: 100vh;
         background-color: #626262;
-        background-image: url(../img/footer/bg.svg);
+        background-image: url(../../img/footer/bg.svg);
         background-position: 200px 0;
         background-size: cover;
         background-repeat: no-repeat;
@@ -203,7 +203,7 @@
 }
 
 .header .menu__li:hover {
-    border-bottom: .5px solid #fff
+    border-bottom: .5px solid #dbb343
 }
 
 .header .menu__li.btn-li {
@@ -212,7 +212,7 @@
 }
 
 .header .menu .book-btn {
-    border: thick double #dbb343;
+    border: thick double #000;
     font-family: Philosopher, sans-serif;
     font-size: 25px;
     background: 0 0;
@@ -222,18 +222,18 @@
 }
 
 .header .menu .book-btn:hover {
-    color: #fff;
-    border: thick double #fff
+    color: #dbb343;
+    border: thick double #dbb343
 }
 
 .header .menu__li:hover .menu__link {
-    color: #fff
+    color: #dbb343
 }
 
 .header .menu__link {
     font-family: Philosopher, sans-serif;
     font-size: 30px;
-    color: #dbb343;
+    color: #000;
     white-space: nowrap
 }
 
@@ -264,7 +264,7 @@
 
     .header .menu__nav-header .mob-lang a {
         font-family: Philosopher, sans-serif;
-        color: #c1c1c1;
+        color: #fff;
         font-size: 16px
     }
 
@@ -275,7 +275,7 @@
     .header .menu__nav-header .mob-lang span {
         height: 20px;
         width: 1px;
-        background: #c1c1c1;
+        background: #fff;
         margin: 0 10px
     }
 
@@ -288,11 +288,14 @@
     }
 
     .header .menu .book-btn {
+        border: thick double #fff;
+        color: #fff;
         width: 100%
     }
 
     .header .menu__link {
-        text-align: center
+        text-align: center;
+        color: #fff
     }
 
     .header .menu__sub-list {
@@ -312,10 +315,6 @@
         margin: 0 10px;
         display: inline-block
     }
-
-    .header .logo svg path {
-        fill: #000
-    }
 }
 
 .header .menu__sub-li:hover .menu__sub-link {
@@ -323,7 +322,7 @@
 }
 
 .header .menu__sub-link {
-    color: #dbb343;
+    color: #000;
     font-size: 30px;
     white-space: nowrap
 }
@@ -360,8 +359,26 @@
     margin-right: 20px
 }
 
+.header .actions__cart svg path {
+    stroke: #000
+}
+
 .header .actions__cart:hover svg path {
     stroke: #dbb343
+}
+
+@media (max-width: 960px) {
+    .header .menu__sub-link {
+        color: #fff
+    }
+
+    .header .logo svg path {
+        fill: #000
+    }
+
+    .header .actions__cart, .header .actions__language {
+        display: none
+    }
 }
 
 .header .actions__language .lang-select-wrapper {
@@ -382,13 +399,13 @@
     align-items: center;
     justify-content: space-between;
     font-size: 20px;
-    color: #fff;
+    color: #000;
     cursor: pointer;
     margin-bottom: 10px
 }
 
 .header .actions__language .lang-select__selected {
-    color: #fff;
+    color: #000;
     font-family: Philosopher, sans-serif
 }
 
@@ -409,7 +426,7 @@
     position: relative;
     display: block;
     font-size: 22px;
-    color: #fff;
+    color: #000;
     cursor: pointer;
     transition: .5s;
     margin-bottom: 10px;
@@ -436,7 +453,7 @@
     width: .15rem;
     height: 100%;
     transition: .5s;
-    background-color: #fff
+    background-color: #000
 }
 
 .header .actions__language .arrow::before {
@@ -463,24 +480,12 @@
     text-transform: uppercase;
     font-family: Philosopher, sans-serif;
     max-width: 45px;
-    font-size: 12px;
+    font-size: 14px;
     color: #000;
     display: none
 }
 
 @media (max-width: 960px) {
-    .header .actions__cart {
-        display: none
-    }
-
-    .header .actions__cart svg path {
-        stroke: #000
-    }
-
-    .header .actions__language {
-        display: none
-    }
-
     .header .actions__book-link {
         display: block
     }

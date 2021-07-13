@@ -1,0 +1,326 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/blocks/header-white.css' %}">
+    <link rel="stylesheet" href="{% static 'css/adds/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/adds/lightgallery.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pages/booking.css' %}">
+    <link rel="stylesheet" href="{% static 'css/adds/keyframes.css' %}">
+{% endblock %}
+
+{% block header %}
+    {% include 'include/header-white.html' %}
+{% endblock %}
+
+{% block modal_video %}
+
+{% endblock %}
+
+{% block content %}
+     <section class="section-booking section">
+            <div class="container">
+                <div class="booking-steps"> <button class="book-step active">Rooms</button> <span></span> <button
+                        class="book-step">Guest Details</button> <span></span> <button
+                        class="book-step">Confirmation</button> </div>
+                <div class="booking-wrapper">
+                    <div class="rooms">
+                        <div class="room-search">
+                            <div class="search-wrapper hotel">
+                                <form action="#" class="search">
+                                    <div class="search__actions">
+                                        <div class="search__actions-row">
+                                            <div class="location-select-wrapper cust-sel">
+                                                <div class="location-header">
+                                                    <p class="selected-location">Location</p> <span
+                                                        class="arrow"></span>
+                                                </div>
+                                                <div class="location-types"> <label class="option-sel"> <span
+                                                            class="type-wrapper"> <input type="radio" name="date-field">
+                                                            <span>Ekaterina</span> </span> <span class="street">(25
+                                                            Grecheskaya str.)</span> </label> <label class="option-sel">
+                                                        <span class="type-wrapper"> <input type="radio"
+                                                                name="date-field"> <span>Ekaterina II</span> </span>
+                                                        <span class="street">(7 Ekaterininskaya str.)</span> </label>
+                                                    <label class="option-sel"> <span class="type-wrapper"> <input
+                                                                type="radio" name="date-field"> <span>Both</span>
+                                                        </span> <span class="street"></span> </label> </div>
+                                            </div>
+                                            <div class="arriving-wrapper date-field"> <label> <input type="text"
+                                                        class="date-input" placeholder="Arriving">
+                                                    <picture>
+                                                        <source srcset="{% static 'img/header/calendar.svg' %}" type="image/webp"><img
+                                                            src="{% static 'img/header/calendar.svg' %}" alt="callendar">
+                                                    </picture>
+                                                </label> </div>
+                                            <div class="leaving-wrapper date-field"> <label> <input type="text"
+                                                        class="date-input" placeholder="Leaving">
+                                                    <picture>
+                                                        <source srcset="{% static 'img/header/calendar.svg' %}" type="image/webp"><img
+                                                            src="{% static 'img/header/calendar.svg' %}" alt="callendar">
+                                                    </picture>
+                                                </label> </div>
+                                            <div class="location-select-wrapper cust-sel">
+                                                <div class="location-header">
+                                                    <p class="selected-location">Persons</p> <span class="arrow"></span>
+                                                </div>
+                                                <div class="location-types"> <label class="option-sel"> <span
+                                                            class="type-wrapper"> <input type="radio" name="persons">
+                                                            <span>1</span> </span> </label> <label class="option-sel">
+                                                        <span class="type-wrapper"> <input type="radio" name="persons">
+                                                            <span>2</span> </span> </label> <label class="option-sel">
+                                                        <span class="type-wrapper"> <input type="radio" name="persons">
+                                                            <span>2+child</span> </span> </label> </div>
+                                            </div>
+                                        </div>
+                                        <div class="search__actions-row">
+                                            <div class="location-select-wrapper cust-sel">
+                                                <div class="location-header">
+                                                    <p class="selected-location">Location</p> <span
+                                                        class="arrow"></span>
+                                                </div>
+                                                <div class="location-types"> <label class="option-sel"> <span
+                                                            class="type-wrapper"> <input type="radio" name="date-field">
+                                                            <span>Ekaterina</span> </span> <span class="street">(25
+                                                            Grecheskaya str.)</span> </label> <label class="option-sel">
+                                                        <span class="type-wrapper"> <input type="radio"
+                                                                name="date-field"> <span>Ekaterina II</span> </span>
+                                                        <span class="street">(7 Ekaterininskaya str.)</span> </label>
+                                                    <label class="option-sel"> <span class="type-wrapper"> <input
+                                                                type="radio" name="date-field"> <span>Both</span>
+                                                        </span> <span class="street"></span> </label> </div>
+                                            </div>
+                                            <div class="arriving-wrapper date-field"> <label> <input type="text"
+                                                        class="date-input" placeholder="Arriving">
+                                                    <picture>
+                                                        <source srcset="{% static 'img/header/calendar.svg' %}" type="image/webp"><img
+                                                            src="{% static 'img/header/calendar.svg' %}" alt="callendar">
+                                                    </picture>
+                                                </label> </div>
+                                            <div class="leaving-wrapper date-field"> <label> <input type="text"
+                                                        class="date-input" placeholder="Leaving">
+                                                    <picture>
+                                                        <source srcset="{% static 'img/header/calendar.svg' %}" type="image/webp"><img
+                                                            src="{% static 'img/header/calendar.svg' %}" alt="callendar">
+                                                    </picture>
+                                                </label> </div>
+                                            <div class="location-select-wrapper cust-sel">
+                                                <div class="location-header">
+                                                    <p class="selected-location">Persons</p> <span class="arrow"></span>
+                                                </div>
+                                                <div class="location-types"> <label class="option-sel"> <span
+                                                            class="type-wrapper"> <input type="radio" name="persons">
+                                                            <span>1</span> </span> </label> <label class="option-sel">
+                                                        <span class="type-wrapper"> <input type="radio" name="persons">
+                                                            <span>2</span> </span> </label> <label class="option-sel">
+                                                        <span class="type-wrapper"> <input type="radio" name="persons">
+                                                            <span>2+child</span> </span> </label> </div>
+                                            </div>
+                                        </div>
+                                    </div> <button>Search</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="room-choice">
+                            <div class="room-choice__item">
+                                <div class="room-image">
+                                    <div class="room-image__header">
+                                        <picture>
+                                            <source srcset="{% static 'img/booking/room/room.webp' %}" type="image/webp"><img
+                                                src="{% static 'img/booking/room/room.png' %}" alt="room">
+                                        </picture>
+                                    </div>
+                                    <div class="room-image__body">
+                                        <p class="room-image__title">Double Standart Suite</p>
+                                        <p class="room-image__desc">20 m<sup>2</sup> with balcony</p>
+                                        <div class="room-image__type">
+                                            <p>Double</p>
+                                            <picture>
+                                                <source srcset="{% static 'img/booking/bed.svg' %}" type="image/webp"><img
+                                                    src="{% static 'img/booking/bed.svg' %}" alt="bed">
+                                            </picture>
+                                            <div class="more"> <span></span> <span></span> </div>
+                                        </div> <a href="#" class="room-image__more">More room details</a>
+                                    </div>
+                                </div>
+                                <div class="room-types">
+                                    <div class="room-types__type">
+                                        <div class="room-types__info">
+                                            <p class="room-types__info-heading"> Bed only </p>
+                                            <ul class="room-types__info-list">
+                                                <li class="room-types__info-li"> Breakfast not included; </li>
+                                                <li class="room-types__info-li"> Free cancellation up to 7 days before
+                                                    arrival; </li>
+                                                <li class="room-types__info-li"> Payment on arrival </li>
+                                            </ul>
+                                        </div>
+                                        <form action="" class="room-types__form">
+                                            <div class="price"> <span>per night</span>
+                                                <p class="price__text"> € 255 </p>
+                                            </div> <button>Add</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="personal-information">
+                            <form action="#" class="personal-information__form">
+                                <h3 class="personal-information__heading"> personal information </h3>
+                                <div class="inputs">
+                                    <div class="inputs__full-name"> <input type="text" class="inputs__name"
+                                            placeholder="First Name"> <input type="text" class="inputs__last-name"
+                                            placeholder="Last Name"> </div> <input type="email" placeholder="E-mail"
+                                        class="inputs__email" required /> <input type="text" class="inputs__phone"
+                                        placeholder="Phone number">
+                                </div>
+                                <h3 class="personal-information__heading"> Additional Details and Preferences </h3>
+                                <textarea name="details" class="inputs__textarea"
+                                    placeholder="Please note your requests or special needs"></textarea>
+                            </form>
+                            <div class="personal-information__policy">
+                                <h3 class="personal-information__heading">pOLICY</h3>
+                                <div class="personal-information__policy-wrapper">
+                                    <p class="personal-information__policy-detail"> <span class="check">Check-in</span>
+                                        <span class="check-text">After 3:00 PM</span> </p>
+                                    <p class="personal-information__policy-detail"> <span class="check">Check-out</span>
+                                        <span class="check-text">Before 3:00 PM</span> </p>
+                                    <p class="personal-information__policy-detail"> <span class="check">Guarante
+                                            policy</span> <span class="check-text">Lorem ipsum dolor sit amet.</span>
+                                    </p>
+                                    <p class="personal-information__policy-detail"> <span class="check">Guarante
+                                            policy</span> <span class="check-text">Lorem ipsum dolor sit amet.</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reciept">
+                            <div class="reciept__agree">
+                                <div class="reciept__form"> <label> <input type="checkbox" name="company_policy">
+                                        <span>I agree to the <span class="company-policy">Company policy</span> and
+                                            understand all its statements clearly </span> </label> <label> <input
+                                            type="checkbox" name="company_policy"> <span>Yes, I would like to receive
+                                            newsletters and special offers by email</span> </label> </div>
+                                <div class="reciept__info">
+                                    <h2 class="reciept__heading">Receipt</h2>
+                                    <div class="reciept__info-text">
+                                        <ul class="reciept__info-list">
+                                            <li class="reciept__info-li"> Hotel Ekaterina II </li>
+                                            <li class="reciept__info-li"> 7 Yekaterininskaya sqr., </li>
+                                            <li class="reciept__info-li"> Odessa, Ukraine 65000 </li>
+                                            <li class="reciept__info-li"> +38 (048) 705-45-07 </li>
+                                            <li class="reciept__info-li"> +38 (068) 705-45-07 </li>
+                                            </li>
+                                            <li class="reciept__info-li"> booking@hotel-ekaterina.com </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="room-items">
+                                    <div class="room-items__item">
+                                        <div class="room-image">
+                                            <div class="room-image__header">
+                                                <picture>
+                                                    <source srcset="{% static 'img/booking/room/room.webp' %}" type="image/webp"><img
+                                                        src="{% static 'img/booking/room/room.png' %}" alt="room">
+                                                </picture>
+                                            </div>
+                                            <div class="room-image__body">
+                                                <p class="room-image__title">Double Standart Suite</p>
+                                                <p class="room-image__desc">20 m<sup>2</sup> with balcony</p>
+                                                <div class="room-image__type">
+                                                    <p>Double</p>
+                                                    <picture>
+                                                        <source srcset="{% static 'img/booking/bed.svg' %}" type="image/webp"><img
+                                                            src="{% static 'img/booking/bed.svg' %}" alt="bed">
+                                                    </picture>
+                                                    <div class="more"> <span></span> <span></span> </div>
+                                                </div> <a href="#" class="room-image__more">More room details</a>
+                                            </div>
+                                        </div>
+                                        <div class="room-info">
+                                            <div class="room-info__header">
+                                                <div class="room-info__name">
+                                                    <p class="room-info__title">Double Standart Suite</p> <span
+                                                        class="room-info__desc">Bed & Breakfast Non-refundable</span>
+                                                </div>
+                                                <p class="room-info__price"> € 1 355 </p>
+                                            </div>
+                                            <div class="room-info__details">
+                                                <div class="room-info__details-header">
+                                                    <p class="room-info__detail-title"> 1 Night </p>
+                                                    <div class="more"> <span></span><span></span> </div>
+                                                </div>
+                                                <div class="room-info__details-date-wrapper">
+                                                    <div class="room-info__details-date-text"> Thu, Dec 24, 2020 </div>
+                                                    <div class="room-info__details-date-price"> € 1 355 </div>
+                                                </div>
+                                                <hr>
+                                                <div class="room-info__details-body">
+                                                    <div class="room-info__details-row">
+                                                        <p class="room-info__details-title"> Check-in </p> <span
+                                                            class="room-info__details-date">Thu, Dec 24, 2020</span>
+                                                        <span class="room-info__details-time">13:00</span>
+                                                    </div>
+                                                    <div class="room-info__details-row">
+                                                        <p class="room-info__details-title"> Check-out </p> <span
+                                                            class="room-info__details-date">Fri, Dec 25, 2020</span>
+                                                        <span class="room-info__details-time">12:00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="room-info__guests">
+                                                <p class="room-info__guests-detail">Guest details</p>
+                                                <ul class="room-info__guests-ul">
+                                                    <li class="room-info__guests-li"> Vlad Kronos </li>
+                                                    <li class="room-info__guests-li"> vladkronos@gmail.com </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stay">
+                        <div class="stay__header">
+                            <h2 class="stay__heading"> YOUR STAY </h2>
+                            <div class="stay__details"> <button>details</button> </div>
+                        </div>
+                        <div class="stay__body">
+                            <div class="stay__details-check">
+                                <p class="check-in">Check-in <span>14:00</span></p>
+                                <p class="check-out">Check-out <span>12:00</span></p>
+                            </div>
+                            <div class="stay__details-date">
+                                <p class="from-date">23.11.2020 <span>(Wed)</span></p> <span class="def">-</span>
+                                <p class="to-date">24.11.2020 <span>(Tue)</span></p>
+                            </div>
+                            <p class="stay__people">2 Adults & 1 child</p>
+                            <div class="room-items">
+                                <div class="room-item">
+                                    <div class="room-item__wrapper">
+                                        <div class="cancel"> <span></span> <span></span> </div>
+                                        <p class="room-item__name">Double Standart Suite</p>
+                                        <p class="room-item__price">€ 1 355</p>
+                                        <div class="room-item__more-info"> <span></span> <span></span> </div>
+                                    </div>
+                                    <p class="room-item__dop">Bed & breakfast</p>
+                                </div>
+                            </div>
+                            <div class="stay__total">
+                                <div class="stay__total-price-wrapper">
+                                    <p class="stay__total-price-text">TOTAL</p>
+                                    <p class="stay__total-price">€ 1 355</p>
+                                </div> <button class="stay__total-button">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}
+
+{% block scripts %}
+
+
+{% endblock %}

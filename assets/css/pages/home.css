@@ -1,7 +1,7 @@
 .section-main {
     width: 100%;
     height: 100vh;
-    background-image: url(../img/header/bg.png);
+    background-image: url(../../img/header/bg.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -815,7 +815,7 @@
     content: "";
     width: 15px;
     height: 20px;
-    background-image: url(../img/home/services/rect.svg);
+    background-image: url(../../img/home/services/rect.svg);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -943,7 +943,7 @@
 .section-locations {
     display: flex;
     justify-content: space-between;
-    background-image: url(../img/home/locations/bg.png);
+    background-image: url(../../img/home/locations/bg.png);
     background-size: cover;
     background-position: left;
     padding: 0

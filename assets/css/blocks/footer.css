@@ -14,7 +14,7 @@
     position: relative;
     align-items: flex-start;
     background: rgba(185, 139, 75, .67);
-    background-image: url(../img/footer/bg.svg);
+    background-image: url(../../img/footer/bg.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: -400px 0
