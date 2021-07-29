@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/blocks/header-white.css' %}">
+    <link rel="stylesheet" href="{% static 'css/adds/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pages/contacts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/adds/keyframes.css' %}">
+{% endblock %}
+
+{% block header %}
+    {% include 'include/header-white.html' %}
+{% endblock %}
+{% block content %}
+    <section style="width: 100%; padding-top: 200px;">
+
+        some text
+    </section>
+{% endblock %}

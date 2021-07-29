@@ -97,13 +97,13 @@
                 <div class="container-body">
                     <div class="date">
                         <div class="date__mounth-wrapper date-item">
-                            <p class="date__mounth">17 June</span> </p> <small class="date__year">2021</small>
+                            <p class="date__mounth">{{ day_id }} {{ month_name }}</span> </p> <small class="date__year">{{ year }}</small>
                         </div> <span></span>
                         <div class="date__hour-wrapper date-item">
-                            <p class="date__hour">11:00</p> <small class="date__hour-type">pm</small>
+                            <p class="date__hour">{{ hours }}: {{ minutes }}</p> <small class="date__hour-type">pm</small>
                         </div> <span></span>
                         <div class="date__weather-wrapper date-item">
-                            <p class="date__weather">23° C</p> <small class="date__weather-desc">sunny</small>
+                            <p class="date__weather">{{ weather_temp }}° C</p> <small class="date__weather-desc">{{ weather_desc }}</small>
                         </div>
                     </div>
                 </div>

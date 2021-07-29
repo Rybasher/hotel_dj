@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home'
+    'main'
 ]
 
 MIDDLEWARE = [
@@ -65,6 +65,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'main.context_processor.basket',
+
             ],
         },
     },
@@ -136,3 +138,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+WSDL_CONFIG = {
+    'url': 'http://192.168.9.228/gostproba/ws/ObmenSait_ws1.1cws?wsdl',
+    'user': 'sait',
+    'password': 'sait555'
+}
