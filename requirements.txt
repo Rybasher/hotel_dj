@@ -17,6 +17,7 @@ isodate==0.6.0
 lxml==4.6.3
 Pillow==8.3.1
 psycopg2==2.9.1
+psycopg2-binary
 pytz==2021.1
 ratelim==0.1.6
 requests==2.26.0

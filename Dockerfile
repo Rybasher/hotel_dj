@@ -6,7 +6,7 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /app
 
 RUN apk --update add
-RUN apk add gcc libc-dev libffi-dev jpeg-dev zlib-dev libjpeg libxml2-dev libxml2 libxslt-dev
+RUN apk add gcc python3-dev libc-dev libffi-dev jpeg-dev zlib-dev libjpeg libxml2-dev libxml2 libxslt-dev
 RUN apk add postgresql-dev
 
 RUN pip install --upgrade pip
