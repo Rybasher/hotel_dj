@@ -205,7 +205,8 @@
 .section-leisure .section-body .leisure-item .item .info .list .li {
     font-family: "Cormorant Garamond", serif;
     font-size: 22px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    text-align: right;
 }
 
 .section-leisure .section-body .leisure-item .item .info .list .li::after {
