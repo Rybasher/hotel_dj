@@ -2,16 +2,21 @@
 {% load static %}
 
 {% block style %}
-    <link rel="stylesheet" href="{% static 'css/blocks/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blocks/header-white.css' %}">
     <link rel="stylesheet" href="{% static 'css/adds/lightgallery.css' %}">
     <link rel="stylesheet" href="{% static 'css/adds/swiper.css' %}">
     <link rel="stylesheet" href="{% static 'css/pages/hotel.css' %}">
     <link rel="stylesheet" href="{% static 'css/pages/home.css' %}">
     <link rel="stylesheet" href="{% static 'css/adds/keyframes.css' %}">
+    <style>
+    .header{
+        background: #fff;
+    }
+    </style>
 {% endblock %}
 
 {% block header %}
-    {% include 'include/header.html' %}
+    {% include 'include/header-white.html' %}
 {% endblock %}
 
 {% block modal_video %}
