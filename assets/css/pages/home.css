@@ -948,12 +948,26 @@
     background-position: left;
     padding: 0
 }
+@media (max-width: 960px) {
+   .section-locations{
+       flex-direction: column;
+       align-items: center;
+   }
+}
 
 .section-locations .info {
     padding: 120px 0 120px 30px;
     flex: 0 1 40%;
     display: flex;
     justify-content: flex-end
+}
+@media (max-width: 960px) {
+  .section-locations .info {
+    padding: 80px 0 60px 30px;
+    flex: 0 1 40%;
+    display: flex;
+    justify-content: flex-end
+}
 }
 
 .section-locations .info .container {
@@ -968,9 +982,23 @@
     max-width: 491px;
     text-transform: uppercase
 }
+@media (max-width: 960px) {
+   .section-locations .info .heading {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 38px;
+    letter-spacing: 180%;
+    max-width: 491px;
+    text-transform: uppercase
+    }
+}
 
 .section-locations .info .addresses-wrapper {
     margin-top: 100px
+}
+@media (max-width: 960px) {
+  .section-locations .info .addresses-wrapper {
+    margin-top: 50px
+}
 }
 
 .section-locations .info .address-item {
@@ -984,11 +1012,27 @@
     margin-bottom: 20px;
     text-transform: uppercase
 }
+@media (max-width: 960px) {
+   .section-locations .info .address-item__heading {
+    font-size: 30px;
+    font-family: Philosopher, sans-serif;
+    margin-bottom: 20px;
+    text-transform: uppercase
+    }
+}
+
 
 .section-locations .info .address-item__number {
     font-size: 24px;
     font-family: Philosopher, sans-serif;
     color: #4f4f4f
+}
+@media (max-width: 960px) {
+   .section-locations .info .address-item__number {
+    font-size: 20px;
+    font-family: Philosopher, sans-serif;
+    color: #4f4f4f
+    }
 }
 
 .section-locations .info .address-item__number:hover {
@@ -1003,4 +1047,33 @@
 
 .section-locations #map {
     flex: 0 1 60%
+}
+@media (max-width: 960px) {
+
+   .section-locations #map {
+       flex: unset;
+       height: 600px;
+       width: 100%;
+   }
+
+}
+.info-window{
+
+    width: 300px;
+
+}
+.info-window__img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.info-window__location-wrapper{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+.info-window__location__name{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Philosopher, sans-serif;
 }

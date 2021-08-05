@@ -190,13 +190,19 @@
                         <p class="sightseeing__info"> Forget all tourist clichés and travel like a local: best locations
                             and up-to-date information, collected all together for you. </p>
                     </div>
-                    <div class="sightseeing__links"> <a href="" class="sightseeing__link"> <span
-                                class="sightseeing__link-title">sightseeing guide</span> <span
-                                class="sightseeing__link-arrow"></span> </a> <a href="" class="sightseeing__link"> <span
-                                class="sightseeing__link-title">museums & theatres</span> <span
-                                class="sightseeing__link-arrow"></span> </a> <a href="" class="sightseeing__link"> <span
-                                class="sightseeing__link-title">museums & theatres</span> <span
-                                class="sightseeing__link-arrow"></span> </a> </div>
+                    <div class="sightseeing__links">
+                        <a href="{% url 'sightseeing' %}" class="sightseeing__link">
+                            <span class="sightseeing__link-title">sightseeing guide</span>
+                            <span class="sightseeing__link-arrow"></span> </a>
+                        <a href="{% url 'sightseeing' %}" class="sightseeing__link">
+                            <span class="sightseeing__link-title">museums & theatres</span>
+                            <span class="sightseeing__link-arrow"></span>
+                        </a>
+                        <a href="{% url 'sightseeing' %}" class="sightseeing__link">
+                            <span class="sightseeing__link-title">museums & theatres</span>
+                            <span class="sightseeing__link-arrow"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -614,6 +620,7 @@ function initMap() {
     let operniy =
         "<div class='info-window'>" +
         "<img src='{% static 'img/home/locations/placec/operniy.png' %}' class='info-window__img'>" +
+        "<div class='info-window__location-wrapper'><p class='info-window__location__name'>Odessa Opera Theatre</p></div>" +
         "</div>";
 
     const opern_mark = new google.maps.Marker({
@@ -640,6 +647,7 @@ function initMap() {
     let gorsad =
         "<div class='info-window'>" +
         "<img src='{% static 'img/home/locations/placec/gorsad.jpg' %}' class='info-window__img'>" +
+        "<div class='info-window__location-wrapper'><p class='info-window__location__name'>Gorsad</p></div>" +
         "</div>";
     const gorsad_mark = new google.maps.Marker({
         position: { lat: 46.4832664, lng: 30.7355324 },
