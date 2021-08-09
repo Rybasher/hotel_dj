@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block style %}
@@ -27,32 +28,32 @@
                     <source src="{% static 'img/play_bg.mp4' %}" type="video/mp4">
                 </video>
                 <div class="container">
-                <button class="full-video"> Watch full video </button>
+                <button class="full-video"> {% trans "Watch full video" %}</button>
                 <div class="search-wrapper">
                     <form action="#" class="search">
                         <div class="location-select-wrapper cust-sel">
                             <div class="location-header">
-                                <p class="selected-location">Location</p> <span class="arrow"></span>
+                                <p class="selected-location">{% trans "Location" %}</p> <span class="arrow"></span>
                             </div>
                             <div class="location-types">
                                 <label class="option-sel">
                                     <span class="type-wrapper">
                                         <input type="radio" name="date-field">
-                                        <span>Ekaterina</span>
+                                        <span>{% trans "Ekaterina" %}</span>
                                     </span>
-                                    <span class="street">(25 Grecheskaya str.)</span>
+                                    <span class="street">{% trans "(25 Grecheskaya str.)" %}</span>
                                 </label>
                                 <label class="option-sel">
                                     <span class="type-wrapper">
                                         <input type="radio" name="date-field">
-                                        <span>Ekaterina II</span>
+                                        <span>{% trans "Ekaterina II" %}</span>
                                     </span>
-                                    <span class="street">(7 Ekaterininskaya str.)</span>
+                                    <span class="street">{% trans "(7 Ekaterininskaya str.)" %}</span>
                                 </label>
                                 <label class="option-sel">
                                     <span class="type-wrapper">
                                         <input type="radio" name="date-field">
-                                        <span>Both</span>
+                                        <span>{% trans "Both" %}</span>
                                     </span>
                                     <span class="street"></span>
                                 </label>
@@ -74,7 +75,7 @@
                             </label> </div>
                         <div class="location-select-wrapper cust-sel">
                             <div class="location-header">
-                                <p class="selected-location">Persons</p> <span class="arrow"></span>
+                                <p class="selected-location">{% trans "Persons" %}</p> <span class="arrow"></span>
                             </div>
                             <div class="location-types"> <label class="option-sel"> <span class="type-wrapper"> <input
                                             type="radio" name="persons"> <span>1</span> </span> </label> <label
@@ -83,7 +84,7 @@
                                         class="type-wrapper"> <input type="radio" name="persons"> <span>2+child</span>
                                     </span> </label> </div>
                         </div>
-                        <button>Search</button>
+                        <button>{% trans "Search" %}</button>
                     </form>
                 </div>
                     <span class="next-section"></span>
@@ -92,7 +93,7 @@
         <section class="section-currenTime section">
             <div class="container">
                 <header class="container-header">
-                    <h3 class="container-header__title header-title"> Right Now in Odessa </h3>
+                    <h3 class="container-header__title header-title"> {% trans "Right Now in Odessa" %} </h3>
                 </header>
                 <div class="container-body">
                     <div class="date">
@@ -119,9 +120,9 @@
                 </div>
                 <div class="hotel__main">
                     <div class="hotel__title-wrapper">
-                        <h3 class="hotel__title">Hotel Ekaterina</h3>
-                        <p class="hotel__street">Grecheskaya street</p>
-                    </div> <a href="{% url 'hotel' %}" class="hotel__details">Details</a>
+                        <h3 class="hotel__title">{% trans "Hotel Ekaterina" %}</h3>
+                        <p class="hotel__street">{% trans "Grecheskaya street" %}</p>
+                    </div> <a href="{% url 'hotel' %}" class="hotel__details">{% trans "Details" %}</a>
                 </div>
             </div>
             <div class="hotel">
@@ -133,26 +134,26 @@
                 </div>
                 <div class="hotel__main">
                     <div class="hotel__title-wrapper">
-                        <h3 class="hotel__title">Hotel Ekaterina</h3>
-                        <p class="hotel__street">Grecheskaya street</p>
-                    </div> <a href="{% url 'hotel' %}" class="hotel__details">Details</a>
+                        <h3 class="hotel__title">{% trans "Hotel Ekaterina" %}</h3>
+                        <p class="hotel__street">{% trans "Grecheskaya street" %}</p>
+                    </div> <a href="{% url 'hotel' %}" class="hotel__details">{% trans "Details" %}</a>
                 </div>
             </div>
         </section> <!-- CЛОЖНЫЙ БЛОК ЛОКАЦИИ. СДЕЛАТЬ В ПОНЕДЕЛЬНИК -->
         <section class="section-locations section">
             <div class="info">
                 <div class="container">
-                    <h2 class="heading"> BEST LOCATION FOR YOUR UNIQUE EXPERIENcE </h2>
+                    <h2 class="heading">{% trans "BEST LOCATION FOR YOUR UNIQUE EXPERIENcE" %}  </h2>
                     <div class="addresses-wrapper">
                         <div class="address-item">
-                            <h3 class="address-item__heading">Hotel Ekaterina</h3> <a href=""
+                            <h3 class="address-item__heading">{% trans "Hotel Ekaterina" %}</h3> <a href=""
                                 class="address-item__number">+380 (68) 489 25 25</a>
-                            <p class="address-item__street">25 Grecheskaya str., Odessa</p>
+                            <p class="address-item__street">{% trans "25 Grecheskaya str., Odessa" %}</p>
                         </div>
                         <div class="address-item">
-                            <h3 class="address-item__heading">Hotel Ekaterina</h3> <a href=""
+                            <h3 class="address-item__heading">{% trans "Hotel Ekaterina" %}</h3> <a href=""
                                 class="address-item__number">+380 (68) 489 25 25</a>
-                            <p class="address-item__street">25 Grecheskaya str., Odessa</p>
+                            <p class="address-item__street">{% trans "25 Grecheskaya str., Odessa" %}</p>
                         </div>
                     </div>
                 </div>
@@ -180,25 +181,22 @@
             </div>
             <div class="sightseeing">
                 <div class="sightseeing__wrapper">
-                    <h2 class="sightseeing__heading">sightseeing & party</h2>
+                    <h2 class="sightseeing__heading">{% trans "sightseeing & party" %}</h2>
                     <div class="sightseeing__desc">
-                        <p class="sightseeing__quest">Tourism, work or research?</p>
-                        <p class="sightseeing__info"> Whatever brought you to Odessa, we want to show you the city from
-                            its best side. Specially for these purposes, we have developed our own city guide, which
-                            will be useful for all of our guests.</p>
-                        <p class="sightseeing__info"> Forget all tourist clichés and travel like a local: best locations
-                            and up-to-date information, collected all together for you. </p>
+                        <p class="sightseeing__quest">{% trans "Tourism, work or research?" %}</p>
+                        <p class="sightseeing__info">{% trans "Whatever brought you to Odessa, we want to show you the city from its best side. Specially for these purposes, we have developed our own city guide, which  will be useful for all of our guests." %} </p>
+                        <p class="sightseeing__info">{% trans "Forget all tourist clichés and travel like a local: best locations and up-to-date information, collected all together for you." %}  </p>
                     </div>
                     <div class="sightseeing__links">
                         <a href="{% url 'sightseeing' %}" class="sightseeing__link">
-                            <span class="sightseeing__link-title">sightseeing guide</span>
+                            <span class="sightseeing__link-title">{% trans "sightseeing guide" %}</span>
                             <span class="sightseeing__link-arrow"></span> </a>
                         <a href="{% url 'sightseeing' %}" class="sightseeing__link">
-                            <span class="sightseeing__link-title">museums & theatres</span>
+                            <span class="sightseeing__link-title">{% trans "museums & theatres" %}</span>
                             <span class="sightseeing__link-arrow"></span>
                         </a>
                         <a href="{% url 'sightseeing' %}" class="sightseeing__link">
-                            <span class="sightseeing__link-title">museums & theatres</span>
+                            <span class="sightseeing__link-title">{% trans "museums & theatres" %}</span>
                             <span class="sightseeing__link-arrow"></span>
                         </a>
                     </div>
@@ -208,7 +206,7 @@
         <section class="section-room section">
             <header class="section-room__header">
                 <div class="container">
-                    <h2 class="container__heading">ROOMS & APARTMENTS</h2>
+                    <h2 class="container__heading">{% trans "ROOMS & APARTMENTS" %}</h2>
                 </div>
             </header>
             <div class="swipers">
@@ -306,24 +304,24 @@
             <div class="info">
                 <div class="container">
                     <div class="item hosp-item">
-                        <h2 class="item__heading"> hospitality & service </h2>
-                        <p class="item__desc">Many years of experience in the hotel industry have helped us to notice
+                        <h2 class="item__heading">{% trans "hospitality & service" %}  </h2>
+                        <p class="item__desc">{% trans "Many years of experience in the hotel industry have helped us to notice
                             and take into account all the details that will help provide you with a quality rest and
                             carefree stay. It’s a common fact, that small hotels feel more like home. We definitely
                             agree with this statement and everyday we put our hearts into making our dear guests feel
                             comfortable and peaceful staing in our hotels. We are happy to provide you with the
-                            following services:</p>
+                            following services:" %}</p>
                         <ul class="item__list">
-                            <li class="item__li">High-quality laundry service </li>
-                            <li class="item__li">Fast and secure internet connection</li>
-                            <li class="item__li">Personal safe in each room</li>
+                            <li class="item__li">{% trans "High-quality laundry service" %} </li>
+                            <li class="item__li">{% trans "Fast and secure internet connection" %}</li>
+                            <li class="item__li">{% trans "Personal safe in each room" %}</li>
                         </ul>
                     </div>
                     <div class="item">
-                        <h2 class="item__heading"> reastaurant & seaview </h2>
-                        <p class="item__desc">What about a breakfast with gorgeous and unique sea view? In Ekaterina
+                        <h2 class="item__heading">{% trans "reastaurant & seaview" %}  </h2>
+                        <p class="item__desc">{% trans "What about a breakfast with gorgeous and unique sea view? In Ekaterina
                             hotel you can enjoy both your morning coffee and romantic dinner in our top floor
-                            restaurant. </p>
+                            restaurant. " %}</p>
                     </div>
                 </div>
             </div>
@@ -364,7 +362,7 @@
         </section>
         <section class="section-reviews section">
             <header class="reviews-header">
-                <h2 class="reviews-header__heading"> Reviews </h2>
+                <h2 class="reviews-header__heading">{% trans "Reviews" %}  </h2>
             </header>
             <div class="swiper-container reviews-slider">
                 <div class="swiper-wrapper">

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block style %}
@@ -50,10 +51,9 @@
                 </div>
                 <div class="info">
                     <div class="container-head">
-                        <h2 class="info__heading"> hotel ekaterina: YOUR COMFORTABLE & UNIQUE STAY </h2>
-                        <p class="info__desc"> Spacious rooms and a large selection of apartments are an excellent
-                            choice for a family or a large group. Each room is individually designed, allowing you to
-                            choose the atmosphere of your stay that suits you best. </p>
+                        <h2 class="info__heading">{% trans "hotel ekaterina: YOUR COMFORTABLE & UNIQUE STAY" %}  </h2>
+                        <p class="info__desc">
+                            {% trans 'Spacious rooms and a large selection of apartments are an excellent choice for a family or a large group. Each room is individually designed, allowing you to choose the atmosphere of your stay that suits you best.' %}  </p>
                     </div>
                 </div>
             </div>
@@ -62,13 +62,13 @@
                     <form action="#" class="search">
                         <div class="location-select-wrapper cust-sel">
                             <div class="location-header">
-                                <p class="selected-location">Location</p> <span class="arrow"></span>
+                                <p class="selected-location">{% trans "Location" %}</p> <span class="arrow"></span>
                             </div>
                             <div class="location-types"> <label class="option-sel"> <span class="type-wrapper"> <input
                                             type="radio" name="date-field"> <span>Ekaterina</span> </span> <span
-                                        class="street">(25 Grecheskaya str.)</span> </label> <label class="option-sel">
+                                        class="street">{% trans "(25 Grecheskaya str.)" %}</span> </label> <label class="option-sel">
                                     <span class="type-wrapper"> <input type="radio" name="date-field"> <span>Ekaterina
-                                            II</span> </span> <span class="street">(7 Ekaterininskaya str.)</span>
+                                            II</span> </span> <span class="street">{% trans "(7 Ekaterininskaya str.)" %}</span>
                                 </label> <label class="option-sel"> <span class="type-wrapper"> <input type="radio"
                                             name="date-field"> <span>Both</span> </span> <span class="street"></span>
                                 </label> </div>
@@ -89,7 +89,7 @@
                             </label> </div>
                         <div class="location-select-wrapper cust-sel">
                             <div class="location-header">
-                                <p class="selected-location">Persons</p> <span class="arrow"></span>
+                                <p class="selected-location">{% trans "Persons" %}</p> <span class="arrow"></span>
                             </div>
                             <div class="location-types"> <label class="option-sel"> <span class="type-wrapper"> <input
                                             type="radio" name="persons"> <span>1</span> </span> </label> <label
@@ -97,7 +97,7 @@
                                         <span>2</span> </span> </label> <label class="option-sel"> <span
                                         class="type-wrapper"> <input type="radio" name="persons"> <span>2+child</span>
                                     </span> </label> </div>
-                        </div> <button>Search</button>
+                        </div> <button>{% trans "Search" %}</button>
                     </form>
                 </div>
             </div>
@@ -105,7 +105,7 @@
         <section class="section-rooms section">
             <div class="container">
                 <header class="container-header">
-                    <h2 class="title">ROOMS & APARTMENTS</h2>
+                    <h2 class="title">{% trans "ROOMS & APARTMENTS" %}</h2>
                 </header>
                 <div class="container-body">
                     <div class="room-item">
@@ -131,9 +131,9 @@
                         <div class="room-item__body">
                             <div class="room-item__body-header">
                                 <div class="room-item__room-name">
-                                    <p class="room-item__room-title">Double Standart Siute</p>
-                                    <p class="room-item__room-desc">20 m<sup>2</sup> room with balcony</p>
-                                </div> <button class="room-item__book">Book Now</button>
+                                    <p class="room-item__room-title">{% trans "Double Standart Siute" %}</p>
+                                    <p class="room-item__room-desc">20 m<sup>2</sup> {% trans "room with balcony" %}</p>
+                                </div> <button class="room-item__book">{% trans "Book Now" %}</button>
                             </div>
                             <div class="room-item__body-info">
                                 <div class="room-item__body-desc"> Comfortable room with a large French bed or twin beds
@@ -263,20 +263,20 @@
         </section>
         <section class="section-balcony section">
             <header class="section-header">
-                <h1> The longest balcony in Europe </h1>
+                <h1>{% trans "The longest balcony in Europe" %}  </h1>
             </header>
             <div class="container">
                 <div class="info">
-                    <p class="info__text">The building in which the hotel is located is a real record holder. At the
+                    <p class="info__text">{% trans "The building in which the hotel is located is a real record holder. At the
                         height of the third floor, it is surrounded by the longest continuous balcony in Europe, the
-                        total length of which is ??? meters. </p>
-                    <p class="info__text"> The beautiful four-storey building was constructed in 1905 by the architect
+                        total length of which is ??? meters." %} </p>
+                    <p class="info__text"> {% trans "The beautiful four-storey building was constructed in 1905 by the architect
                         Yuri Dmitrenko by order of the wealthy Odessa houseowner Matvey Mavrokordato. From the very
                         beginning, it functioned as a Revenue house, and its first tenants were the city intelligentsia:
-                        doctors and court workers. </p>
-                    <p class="info__text"> While staying at the Ekaterina Hotel, you have the opportunity to become
+                        doctors and court workers." %} </p>
+                    <p class="info__text"> {% trans "While staying at the Ekaterina Hotel, you have the opportunity to become
                         closer to the history of the city, to feel like you are in the place of the city nobility of the
-                        tsarist times. </p>
+                        tsarist times." %} </p>
                 </div>
                 <div class="image">
                     <picture>
