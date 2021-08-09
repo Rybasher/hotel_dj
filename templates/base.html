@@ -75,6 +75,11 @@
             </div>
         </footer>
     </div>
+    <script>
+            let selected_language = document.querySelector(".lang-select__option.selected");
+            let current_language = document.querySelector(".lang-select__trigger p");
+            current_language.textContent = selected_language.textContent.toUpperCase();
+    </script>
     <script src="{% static 'js/app.min.js' %}"></script>
 
     {% block scripts %}

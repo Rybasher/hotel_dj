@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block style %}
@@ -20,10 +21,10 @@
 
  <section class="section-map section">
             <div class="contacts">
-                <h1 class="contacts__header-heading">Contacts</h1>
+                <h1 class="contacts__header-heading">{% trans "Contacts" %}</h1>
                 <div class="contacts__wrapper">
                     <div class="contacts__booking">
-                        <h3 class="contacts__heading">Booking service</h3> <a href="mailto:booking@hotel-ekaterina.com"
+                        <h3 class="contacts__heading">{% trans "Booking service" %}</h3> <a href="mailto:booking@hotel-ekaterina.com"
                             class="contacts__email">booking@hotel-ekaterina.com</a>
                         <div class="contacts__numbers"> <a href="tel:+380672525439" class="contacts__number">+38 (067)
                                 25 25 439</a> <a href="tel:+380672525439" class="contacts__number">+38 (067) 25 25
@@ -55,18 +56,18 @@
             </div>
         </section>
         <section class="section-reviews-cont section">
-            <h2 class="heading">Reviews</h2>
+            <h2 class="heading">{% trans "Reviews" %}</h2>
             <div class="reviews__wrapper">
                 <div class="hear">
-                    <h3 class="hear__heading">we would like to hear from you</h3>
-                    <p class="hear__desc"> Leave us your review note </p>
+                    <h3 class="hear__heading">{% trans "we would like to hear from you" %}</h3>
+                    <p class="hear__desc"> {% trans "Leave us your review note" %} </p>
                     <form action="#" class="hear__form">
                         <div class="input-wrapper"> <input type="text" name="name" class="hear__input" required />
-                            <label for="">name</label> </div>
+                            <label for="">{% trans "name" %}</label> </div>
                         <div class="input-wrapper"> <input type="text" name="email" class="hear__input" required />
                             <label for="">e-mail</label> </div>
                         <div class="input-wrapper"> <input type="text" name="text" class="hear__input" required />
-                            <label for="">text</label> </div> <button>Send</button>
+                            <label for="">{% trans "text" %}</label> </div> <button>Send</button>
                     </form>
                 </div>
                 <div class="reviews">

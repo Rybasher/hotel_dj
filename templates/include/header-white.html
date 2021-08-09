@@ -1,3 +1,4 @@
+{% load i18n %}
 <header class="header" id="header">
     <div class="header__wrapper">
         <div class="header__container container">
@@ -8,7 +9,7 @@
                         <span></span>
                         <span></span>
                     </div>
-                    <p class="menu__burger-text">Menu</p>
+                    <p class="menu__burger-text">{% trans "Menu" %}</p>
                 </div>
                 <nav class="menu__nav">
                     <div class="menu__nav-header">
@@ -26,34 +27,34 @@
                     </div>
                     <ul class="menu__list">
                         <li class="menu__li">
-                            <a href="" class="menu__link">Main Page</a>
+                            <a href="" class="menu__link">{% trans "Main Page" %}</a>
                         </li>
                         <li class="menu__li">
-                            <p class="menu__link subbed">Our Hotels</p>
+                            <p class="menu__link subbed">{% trans "Our Hotels" %}</p>
                             <ul class="menu__sub-list">
                                 <li class="menu__sub-li">
-                                    <a href="" class="menu__sub-link">Ekaterina</a>
+                                    <a href="{% url 'hotel' %}" class="menu__sub-link">Ekaterina</a>
                                 </li>
                                 <li class="menu__sub-li">
-                                    <a href="" class="menu__sub-link">Ekaterina II</a>
+                                    <a href="{% url 'hotel' %}" class="menu__sub-link">Ekaterina II</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="menu__li">
-                            <a href="{% url 'special_offer' %}" class="menu__link">Special offers</a>
+                            <a href="{% url 'special_offer' %}" class="menu__link">{% trans "Special offers" %}</a>
                         </li>
                         <li class="menu__li">
-                            <a href="{% url "sightseeing" %}" class="menu__link">Sightseeing</a>
+                            <a href="{% url "sightseeing" %}" class="menu__link">{% trans "Sightseeing" %}</a>
                         </li>
                         <li class="menu__li">
-                            <a href="{% url "contacts" %}" class="menu__link">Contacts</a>
+                            <a href="{% url "contacts" %}" class="menu__link">{% trans "Contacts" %}</a>
                         </li>
                         <li class="menu__li">
-                            <a href="" class="menu__link">Career</a>
+                            <a href="" class="menu__link">{% trans "Career" %}</a>
                         </li>
                         <li class="menu__li btn-li">
                             <button class="book-btn">
-                                Book now
+                                {% trans "Book now" %}
                             </button>
                         </li>
                     </ul>
@@ -99,7 +100,7 @@
                     </div>
                 </div>
 
-                <a href="" class="actions__book-link">Book now</a>
+                <a href="" class="actions__book-link">{% trans "Book now" %}</a>
 
 
             </div>
