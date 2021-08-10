@@ -171,7 +171,6 @@ class Hotel(models.Model):
     hotel_id = models.CharField(max_length=16, primary_key=True, unique=True)
     name = models.CharField(max_length=32)
     slug = models.SlugField(unique=True)
-
     early_check_in = models.CharField(max_length=2, choices=_HOUR_RANGE)
     late_check_out = models.CharField(max_length=2, choices=_HOUR_RANGE)
     check_in = models.CharField(max_length=2, choices=_HOUR_RANGE)
