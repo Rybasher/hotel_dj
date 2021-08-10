@@ -57,7 +57,7 @@
 }
 
 .footer__link:hover {
-    color: #dbb343
+    color: #B6823A;
 }
 
 .footer__contacts {
@@ -92,7 +92,7 @@
 }
 
 .footer__number:hover {
-    color: #dbb343
+    color: #B6823A;
 }
 
 .footer__logo {
@@ -161,7 +161,7 @@
 .footer .top__arrow {
     height: 100px;
     width: 2px;
-    background: #dbb343;
+    background: #B6823A;
     position: relative
 }
 
@@ -172,7 +172,7 @@
     right: 0;
     width: 8px;
     height: 2px;
-    background: #dbb343;
+    background: #B6823A;
     transform: rotate(-40deg)
 }
 
@@ -196,14 +196,14 @@
     left: 0;
     width: 8px;
     height: 2px;
-    background: #dbb343;
+    background: #B6823A;
     transform: rotate(40deg)
 }
 
 .footer .top__text {
     transform: rotate(90deg);
     white-space: nowrap;
-    color: #dbb343;
+    color: #B6823A;
     font-size: 20px
 }
 

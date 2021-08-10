@@ -430,7 +430,7 @@
 .section-reviews-cont .reviews__wrapper .hear button {
     font-size: 24px;
     color: #fff;
-    border: thick double #fff;
+    border: double #fff;
     background: 0 0;
     padding: 5px 30px
 }

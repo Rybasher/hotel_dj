@@ -82,7 +82,7 @@
 
 .section-main .full-video:hover {
     background: 0 0;
-    border: thick double #fff
+    border: double #fff
 }
 
 .section-main .next-section {
@@ -158,7 +158,7 @@
 .section-currenTime .container-body .date span {
     height: 2px;
     flex: 1;
-    background: #dbb343;
+    background: #B6823A;
     margin: 0 40px
 }
 
@@ -203,7 +203,8 @@
 
 .section-currenTime .container-body .date__weather-desc {
     font-size: 24px;
-    color: #838383
+    color: #838383;
+    max-width: 120px;
 }
 
 .section-hotels {
@@ -300,13 +301,13 @@
     font-size: 24px;
     color: #fff;
     font-family: Philosopher, sans-serif;
-    border: thick double #fff;
-    padding: 10px 20px
+    border: double #fff;
+    padding: 10px 60px
 }
 
 .section-hotels .hotel__details:hover {
-    border: thick double #dbb343;
-    color: #dbb343
+    border: double #B6823A;
+    color: #B6823A
 }
 
 .section-hotels .hotel:hover .hotel__bg img {
@@ -427,11 +428,15 @@
 }
 
 .section-sightseeing .sightseeing__quest {
-    margin-bottom: 10px
+    margin-bottom: 10px;
+    color: #323232;
+
 }
 
 .section-sightseeing .sightseeing__info {
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    line-height: 30px;
+    color: #323232;
 }
 
 .section-sightseeing .sightseeing__links {
@@ -439,7 +444,7 @@
     display: flex;
     flex-direction: column;
     max-width: 457px;
-    width: 100%
+    width: 100%;
 }
 
 .section-sightseeing .sightseeing__link {
@@ -457,7 +462,7 @@
 }
 
 .section-sightseeing .sightseeing__link:hover .sightseeing__link-title {
-    color: #dbb343
+    color: #B6823A
 }
 
 .section-sightseeing .sightseeing__link-title {
@@ -490,7 +495,7 @@
 .section-sightseeing .sightseeing__link-arrow {
     flex: 0 1 20%;
     height: 2px;
-    background: #dbb343;
+    background: #B6823A;
     position: relative
 }
 
@@ -501,7 +506,7 @@
     height: 2px;
     right: 0;
     top: 0;
-    background: #dbb343;
+    background: #B6823A;
     transform: rotate(40deg) translateY(-6px)
 }
 
@@ -512,14 +517,18 @@
     height: 2px;
     right: 0;
     top: 0;
-    background: #dbb343;
+    background: #B6823A;
     transform: rotate(-40deg) translateY(6px)
 }
 
 .section-room {
     padding: 40px 0;
-    background: #635f5b;
-    overflow: hidden
+    background-color: #635f5b;
+    overflow: hidden;
+    background-image: url(../../img/footer/bg.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 400px 0;
 }
 
 .section-room__header {
@@ -616,7 +625,7 @@
     content: "";
     width: 100px;
     height: 2px;
-    background: #dbb343;
+    background: #B6823A;
     margin-right: 30px
 }
 
@@ -634,12 +643,12 @@
     content: "";
     width: 100px;
     height: 2px;
-    background: #dbb343;
+    background: #B6823A;
     margin-left: 30px
 }
 
 .section-room .swipers .room-info .swiper-slide__heading {
-    color: #dbb343;
+    color: #B6823A;
     font-family: Philosopher, sans-serif;
     font-size: 36px;
     text-align: center
@@ -747,7 +756,12 @@
     flex: 0 1 50%;
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 50px
+    margin-bottom: 50px;
+    background-image: url(../../img/footer/bg.svg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: -400px 0;
+
 }
 
 @media (max-width: 1200px) {
@@ -770,7 +784,7 @@
 }
 
 .section-hosptality .item__heading {
-    color: #dbb343;
+    color: #B6823A;
     font-size: 48px;
     font-family: "Cormorant Garamond", serif;
     line-height: 66px;
@@ -943,9 +957,11 @@
 .section-locations {
     display: flex;
     justify-content: space-between;
-    background-image: url(../../img/home/locations/bg.png);
-    background-size: cover;
-    background-position: left;
+        background: #E5E3DF;
+
+    /*background-image: url(../../img/home/locations/bg.png);*/
+    /*background-size: cover;*/
+    /*background-position: left;*/
     padding: 0
 }
 @media (max-width: 960px) {
@@ -959,7 +975,8 @@
     padding: 120px 0 120px 30px;
     flex: 0 1 40%;
     display: flex;
-    justify-content: flex-end
+    justify-content: flex-end;
+    /*background: #E5E3DF;*/
 }
 @media (max-width: 960px) {
   .section-locations .info {
@@ -1036,7 +1053,7 @@
 }
 
 .section-locations .info .address-item__number:hover {
-    color: #dbb343
+    color: #B6823A;
 }
 
 .section-locations .info .address-item__street {
@@ -1076,4 +1093,7 @@
     font-size: 16px;
     font-weight: 500;
     font-family: Philosopher, sans-serif;
+}
+.gm-ui-hover-effect {
+    display: none !important;
 }
