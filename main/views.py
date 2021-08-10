@@ -1,4 +1,5 @@
 import requests
+from django.contrib import messages
 from requests import Session
 from requests.auth import HTTPBasicAuth
 import geocoder
@@ -8,10 +9,12 @@ from zeep import Client
 from zeep.transports import Transport
 import xml.etree.ElementTree as ET
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import DetailView, View
 from .models import *
-from hotel.settings import WSDL_CONFIG
+from .forms import *
+from hotel.settings import WSDL_CONFIG, EMAIL_HOST_USER
+from django.core.mail import send_mail, BadHeaderError
 
 
 
@@ -87,6 +90,30 @@ class ContactsView(View):
         return render(request, 'contacts/contacts.html', {})
 
 
+class AddReview(View):
+
+    def post(self, request):
+        print(request.POST)
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            from_email = form.cleaned_data['email']
+            message = form.cleaned_data['description']
+
+            mail = send_mail(
+                "Отзыв",
+                f'От {name}, почта:{from_email} - отзыв: {message}',
+                EMAIL_HOST_USER, ["kyrary99@gmail.com"], fail_silently=True
+            )
+            if mail:
+                messages.success(request, 'письмо отправлено')
+            else:
+                messages.error(request, 'письмо не отправлено')
+            form.save(commit=True)
+        return redirect("/contacts")
+
+
+
 class SightseeingView(View):
     def get(self, request, *args, **kwargs):
 
@@ -107,3 +134,5 @@ class HotelPageView(View):
 class Booking(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'booking/booking.html')
+
+
