@@ -26,13 +26,12 @@ class OrderStatus:
 
 
 class Review(models.Model):
-    title = models.CharField(max_length=255, verbose_name="Заголово отзыва", db_index=True)
-    slug = models.SlugField(max_length=255, unique=True, db_index=True)
+    name = models.CharField(max_length=255, verbose_name="Имя пользователя", db_index=True)
+    email = models.EmailField(max_length=255, verbose_name="email пользователя", default="")
     description = models.TextField(verbose_name="Текст отзыва")
-    image = models.ImageField(verbose_name="Фото отзыва")
 
     def __str__(self):
-        return self.title
+        return self.name
 
 
 class Contact(models.Model):
@@ -171,7 +170,6 @@ class Hotel(models.Model):
     hotel_id = models.CharField(max_length=16, primary_key=True, unique=True)
     name = models.CharField(max_length=32)
     slug = models.SlugField(unique=True)
-
     early_check_in = models.CharField(max_length=2, choices=_HOUR_RANGE)
     late_check_out = models.CharField(max_length=2, choices=_HOUR_RANGE)
     check_in = models.CharField(max_length=2, choices=_HOUR_RANGE)

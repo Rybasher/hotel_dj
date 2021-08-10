@@ -1,4 +1,6 @@
 {% load i18n %}
+{% load custom_filters %}
+
 <header class="header" id="header">
 	<div class="header__wrapper">
 		<div class="header__container container">
@@ -95,10 +97,13 @@
                                 <span class="arrow"> </span>
 							</div>
 							<div class="lang-select__options">
-                                 {% for language in languages %}
-                                     <a href="/{{ language.code }}/{{ path }}"><span class="lang-select__option {% if language.code == LANGUAGE_CODE %} selected {% endif %}" data-value="{{ language.code }}" >{{ language.code }}</span></a>
+                                  {% with path=request.get_full_path|split:"/" %}
 
+                               {% for language in languages %}
+                                   <p></p>
+                                     <a href="/{{ language.code }}/{{ path|get_path:2|join:"/" }}"><span class="lang-select__option {% if language.code == LANGUAGE_CODE %} selected {% endif %}" data-value="{{ language.code }}" >{{ language.code }}</span></a>
                                 {% endfor %}
+                            {% endwith %}
 							</div>
 						</div>
 					</div>

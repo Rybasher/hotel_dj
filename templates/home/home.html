@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load custom_filters %}
+
 {% load static %}
 
 {% block style %}
@@ -113,7 +115,6 @@
         <section class="section-hotels section">
             <div class="hotel">
                 <div class="hotel__bg">
-
                     <picture>
                         <source srcset="{% static 'img/home/hotels/first.webp' %}" type="image/webp"><img
                             src="{% static 'img/home/hotels/first.webp' %}" alt="Ekaterina">
@@ -185,8 +186,11 @@
                     <h2 class="sightseeing__heading">{% trans "sightseeing & party" %}</h2>
                     <div class="sightseeing__desc">
                         <p class="sightseeing__quest">{% trans "Tourism, work or research?" %}</p>
-                        <p class="sightseeing__info">{% trans "Whatever brought you to Odessa, we want to show you the city from its best side. Specially for these purposes, we have developed our own city guide, which  will be useful for all of our guests." %} </p>
-                        <p class="sightseeing__info">{% trans "Forget all tourist clichés and travel like a local: best locations and up-to-date information, collected all together for you." %}  </p>
+                        <p class="sightseeing__info">
+                            {% blocktrans %}
+                                Whatever brought you to Odessa, we want to show you the city from its best side. Specially for these purposes, we have developed our own city guide, which  will be useful for all of our guests.
+                            {% endblocktrans %} </p>
+                        <p class="sightseeing__info">{% blocktrans %}Forget all tourist clichés and travel like a local: best locations and up-to-date information, collected all together for you.{% endblocktrans %}  </p>
                     </div>
                     <div class="sightseeing__links">
                         <a href="{% url 'sightseeing' %}" class="sightseeing__link">
@@ -306,12 +310,16 @@
                 <div class="container">
                     <div class="item hosp-item">
                         <h2 class="item__heading">{% trans "hospitality & service" %}  </h2>
-                        <p class="item__desc">{% trans "Many years of experience in the hotel industry have helped us to notice
+                        <p class="item__desc">
+                            {% blocktrans %}
+                                Many years of experience in the hotel industry have helped us to notice
                             and take into account all the details that will help provide you with a quality rest and
                             carefree stay. It’s a common fact, that small hotels feel more like home. We definitely
                             agree with this statement and everyday we put our hearts into making our dear guests feel
                             comfortable and peaceful staing in our hotels. We are happy to provide you with the
-                            following services:" %}</p>
+                            following services:
+                            {% endblocktrans %}
+                         </p>
                         <ul class="item__list">
                             <li class="item__li">{% trans "High-quality laundry service" %} </li>
                             <li class="item__li">{% trans "Fast and secure internet connection" %}</li>
@@ -320,9 +328,13 @@
                     </div>
                     <div class="item">
                         <h2 class="item__heading">{% trans "reastaurant & seaview" %}  </h2>
-                        <p class="item__desc">{% trans "What about a breakfast with gorgeous and unique sea view? In Ekaterina
+                        <p class="item__desc">
+                            {% blocktrans %}
+                                What about a breakfast with gorgeous and unique sea view? In Ekaterina
                             hotel you can enjoy both your morning coffee and romantic dinner in our top floor
-                            restaurant. " %}</p>
+                            restaurant.
+                            {% endblocktrans %}
+                            </p>
                     </div>
                 </div>
             </div>

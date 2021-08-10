@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load custom_filters %}
+
 {% load static %}
 
 {% block style %}
@@ -61,14 +63,21 @@
                 <div class="hear">
                     <h3 class="hear__heading">{% trans "we would like to hear from you" %}</h3>
                     <p class="hear__desc"> {% trans "Leave us your review note" %} </p>
-                    <form action="#" class="hear__form">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p style="color: green; font-size: 15px;">{{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                    <form action="{% url 'add_review' %}" class="hear__form" method="post">
+                        {% csrf_token %}
                         <div class="input-wrapper"> <input type="text" name="name" class="hear__input" required />
                             <label for="">{% trans "name" %}</label> </div>
                         <div class="input-wrapper"> <input type="text" name="email" class="hear__input" required />
                             <label for="">e-mail</label> </div>
-                        <div class="input-wrapper"> <input type="text" name="text" class="hear__input" required />
+                        <div class="input-wrapper"> <input type="text" name="description" class="hear__input" required />
                             <label for="">{% trans "text" %}</label> </div> <button>Send</button>
                     </form>
+
                 </div>
                 <div class="reviews">
                     <div class="reviews__item">

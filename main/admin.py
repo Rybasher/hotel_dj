@@ -6,8 +6,7 @@ from .models import *
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ['title', 'description', 'image']
-    prepopulated_fields = {'slug': ('title',)}
+    list_display = ['name', 'email', 'description']
 
 
 @admin.register(Contact)
