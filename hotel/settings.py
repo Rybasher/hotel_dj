@@ -144,14 +144,20 @@ LOCALE_PATHS = (
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'assets')
-# ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'assets')
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '465' #2525
+EMAIL_HOST_USER = "webleontev1@gmail.com"
+EMAIL_HOST_PASSWORD = "webwork99"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
