@@ -77,7 +77,7 @@
 }
 
 .header .menu__burger-icon.active span, .header .menu__burger-icon:hover span {
-    background: #dbb343
+    background: #B6823A;
 }
 
 .header .menu__burger-icon.active span {
@@ -103,11 +103,11 @@
 }
 
 .header .menu__burger-text.active {
-    color: #dbb343
+    color: #B6823A;
 }
 
 .header .menu__nav {
-    padding: 20px 20px 20px 0;
+    padding: 20px 0px;
     position: absolute;
     top: 100%;
     left: 0;
@@ -124,7 +124,10 @@
     pointer-events: all;
     transform: translateY(0)
 }
-
+.header .menu__nav.active .menu__list{
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.68);
+}
 @media (max-width: 960px) {
     .header .menu__burger-icon {
         width: 30px;
@@ -198,12 +201,12 @@
 
 .header .menu__li {
     margin-bottom: 15px;
-    border-bottom: .5px solid #dbb343;
+    border-bottom: .5px solid #B6823A;
     padding-bottom: 10px
 }
 
 .header .menu__li:hover {
-    border-bottom: .5px solid #dbb343
+    border-bottom: .5px solid #B6823A;
 }
 
 .header .menu__li.btn-li {
@@ -212,7 +215,7 @@
 }
 
 .header .menu .book-btn {
-    border: thick double #000;
+    border: double #000;
     font-family: Philosopher, sans-serif;
     font-size: 25px;
     background: 0 0;
@@ -222,17 +225,17 @@
 }
 
 .header .menu .book-btn:hover {
-    color: #dbb343;
-    border: thick double #dbb343
+    color: #B6823A;
+    border: double #B6823A;
 }
 
 .header .menu__li:hover .menu__link {
-    color: #dbb343
+    color: #B6823A;
 }
 
 .header .menu__link {
     font-family: Philosopher, sans-serif;
-    font-size: 30px;
+    font-size: 24px;
     color: #000;
     white-space: nowrap
 }
@@ -288,7 +291,7 @@
     }
 
     .header .menu .book-btn {
-        border: thick double #fff;
+        border: double #fff;
         color: #fff;
         width: 100%
     }
@@ -323,9 +326,17 @@
 
 .header .menu__sub-link {
     color: #000;
-    font-size: 30px;
-    white-space: nowrap
+    font-size: 24px;
+    white-space: nowrap;
+    margin-left: 10px;
 }
+@media (max-width: 960px) {
+    header .menu__sub-link{
+        margin-left: 0px;
+
+    }
+}
+
 
 @media (max-width: 570px) {
     .header .menu__sub-li:last-child {
@@ -364,7 +375,7 @@
 }
 
 .header .actions__cart:hover svg path {
-    stroke: #dbb343
+    stroke: #B6823A;
 }
 
 @media (max-width: 960px) {

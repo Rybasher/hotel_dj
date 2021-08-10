@@ -150,7 +150,7 @@
 }
 
 .search-wrapper .location-select-wrapper .location-types .type-wrapper:hover span {
-    color: #dbb343
+    color: #B6823A;
 }
 
 .search-wrapper .location-select-wrapper.open .arrow {
@@ -195,7 +195,7 @@
 }
 
 .search-wrapper button {
-    border: thick double #fff;
+    border: double #fff;
     padding: 8px 20px;
     background: 0 0;
     color: #fff;
@@ -243,7 +243,7 @@
 
     .search-wrapper button {
         margin-top: 20px;
-        border: thick double #000;
+        border: double #000;
         color: #000
     }
 }

@@ -77,7 +77,7 @@
 }
 
 .header .menu__burger-icon.active span, .header .menu__burger-icon:hover span {
-    background: #dbb343
+    background: #B6823A;
 }
 
 .header .menu__burger-icon.active span {
@@ -103,11 +103,11 @@
 }
 
 .header .menu__burger-text.active {
-    color: #dbb343
+    color: #B6823A;
 }
 
 .header .menu__nav {
-    padding: 20px 20px 20px 0;
+    padding: 20px 0px;
     position: absolute;
     top: 100%;
     left: 0;
@@ -115,7 +115,7 @@
     visibility: hidden;
     pointer-events: none;
     transition: .3s;
-    transform: translateY(10%)
+    transform: translateY(10%);
 }
 
 .header .menu__nav.active {
@@ -124,6 +124,11 @@
     pointer-events: all;
     transform: translateY(0)
 }
+.header .menu__nav.active .menu__list{
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.68);
+}
+
 
 @media (max-width: 960px) {
     .header .menu__burger-icon {
@@ -198,7 +203,7 @@
 
 .header .menu__li {
     margin-bottom: 15px;
-    border-bottom: .5px solid #dbb343;
+    border-bottom: .5px solid #B6823A;
     padding-bottom: 10px
 }
 
@@ -212,18 +217,18 @@
 }
 
 .header .menu .book-btn {
-    border: thick double #dbb343;
+    border: double #B6823A;
     font-family: Philosopher, sans-serif;
     font-size: 25px;
     background: 0 0;
-    color: #dbb343;
+    color: #B6823A;
     padding: 5px 25px;
     white-space: nowrap
 }
 
 .header .menu .book-btn:hover {
     color: #fff;
-    border: thick double #fff
+    border: double #fff
 }
 
 .header .menu__li:hover .menu__link {
@@ -232,8 +237,8 @@
 
 .header .menu__link {
     font-family: Philosopher, sans-serif;
-    font-size: 30px;
-    color: #dbb343;
+    font-size: 24px;
+    color: #B6823A;
     white-space: nowrap
 }
 
@@ -284,7 +289,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center
+        justify-content: center;
     }
 
     .header .menu .book-btn {
@@ -323,10 +328,12 @@
 }
 
 .header .menu__sub-link {
-    color: #dbb343;
-    font-size: 30px;
-    white-space: nowrap
+    color: #B6823A;
+    font-size: 24px;
+    white-space: nowrap;
+    margin-left: 10px;
 }
+
 
 @media (max-width: 570px) {
     .header .menu__sub-li:last-child {
@@ -334,7 +341,7 @@
     }
 
     .header .menu__sub-link {
-        font-size: 20px
+        font-size: 20px;
     }
 
     .modal-video-wrapper iframe {
@@ -361,7 +368,7 @@
 }
 
 .header .actions__cart:hover svg path {
-    stroke: #dbb343
+    stroke: #B6823A;
 }
 
 .header .actions__language .lang-select-wrapper {
@@ -484,6 +491,11 @@
     .header .actions__book-link {
         display: block
     }
+    .header .menu__sub-link {
+
+    margin-left: 0px;
+    }
+
 }
 
 .modal-video-wrapper {

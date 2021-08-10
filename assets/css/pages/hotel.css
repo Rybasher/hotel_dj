@@ -170,7 +170,7 @@
 
 .section-main.hotel .container .search-wrapper.hotel button {
     color: #000;
-    border: thick double #000
+    border: double #000
 }
 
 .section-main.hotel .container .search-wrapper.hotel .street, .section-main.hotel .container .search-wrapper.hotel .type-wrapper {
@@ -275,8 +275,8 @@
 
 .section-rooms .container-body .room-item__book {
     padding: 10px 20px;
-    border: thick double #dbb343;
-    color: #dbb343;
+    border: double #B6823A;
+    color: #B6823A;
     font-size: 24px;
     background: 0 0;
     white-space: nowrap
@@ -321,7 +321,7 @@
     width: 10px;
     height: 10px;
     border-radius: 100%;
-    background: #dbb343;
+    background: #B6823A;
     margin-right: 10px;
     display: inline-block
 }
