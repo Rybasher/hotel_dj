@@ -126,7 +126,7 @@
 }
 .header .menu__nav.active .menu__list{
     padding: 20px;
-    background: rgba(0, 0, 0, 0.68);
+    background: rgba(0, 0, 0, 0.85);
 }
 @media (max-width: 960px) {
     .header .menu__burger-icon {
@@ -236,7 +236,7 @@
 .header .menu__link {
     font-family: Philosopher, sans-serif;
     font-size: 24px;
-    color: #000;
+    color: #fff;
     white-space: nowrap
 }
 
@@ -325,7 +325,7 @@
 }
 
 .header .menu__sub-link {
-    color: #000;
+    color: #fff;
     font-size: 24px;
     white-space: nowrap;
     margin-left: 10px;
