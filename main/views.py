@@ -110,7 +110,9 @@ class AddReview(View):
             else:
                 messages.error(request, 'письмо не отправлено')
             form.save(commit=True)
-        return redirect("/contacts")
+
+        return redirect(request.META.get('HTTP_REFERER')
+)
 
 
 
