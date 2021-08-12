@@ -32,10 +32,11 @@
                 <div class="container">
                 <button class="full-video"> {% trans "Watch full video" %}</button>
                 <div class="search-wrapper">
-                    <form action="#" class="search">
+                    <form action="{% url "get_rooms" %}" class="search" method="get">
                         <div class="location-select-wrapper cust-sel">
                             <div class="location-header">
-                                <p class="selected-location">{% trans "Location" %}</p> <span class="arrow"></span>
+                                <input type="text" class="selected-location" name="location_field" value="{% trans "Location" %}">
+                                <span class="arrow"></span>
                             </div>
                             <div class="location-types">
                                 <label class="option-sel">
@@ -62,14 +63,14 @@
                             </div>
                         </div>
                         <div class="arriving-wrapper date-field"> <label> <input type="text" class="date-input"
-                                    placeholder="Arriving">
+                                    placeholder="Arriving" name="datn">
                                 <picture>
                                     <source srcset="{% static 'img/header/calendar.svg' %}" type="image/webp"><img
                                         src="{% static 'img/header/calendar.svg' %}" alt="callendar">
                                 </picture>
                             </label> </div>
                         <div class="leaving-wrapper date-field"> <label> <input type="text" class="date-input"
-                                    placeholder="Leaving">
+                                    placeholder="Leaving" name="datk">
                                <picture>
                                     <source srcset="{% static 'img/header/calendar.svg' %}" type="image/webp"><img
                                         src="{% static 'img/header/calendar.svg' %}" alt="callendar">
@@ -77,7 +78,8 @@
                             </label> </div>
                         <div class="location-select-wrapper cust-sel">
                             <div class="location-header">
-                                <p class="selected-location">{% trans "Persons" %}</p> <span class="arrow"></span>
+                                <input type="text" name="persons_field" value="{% trans "Persons" %}" class="selected-location" readonly>
+                                <span class="arrow"></span>
                             </div>
                             <div class="location-types"> <label class="option-sel"> <span class="type-wrapper"> <input
                                             type="radio" name="persons"> <span>1</span> </span> </label> <label

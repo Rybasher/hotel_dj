@@ -4,6 +4,7 @@ from requests import Session
 from requests.auth import HTTPBasicAuth
 import geocoder
 import calendar
+from django.http import JsonResponse, HttpResponse
 import datetime
 from zeep import Client
 from zeep.transports import Transport
@@ -20,11 +21,11 @@ from django.core.mail import send_mail, BadHeaderError
 
 # Create your views here.
 
-# session = Session()
-# session.auth = HTTPBasicAuth(WSDL_CONFIG["user"], WSDL_CONFIG["password"])
-# client = Client(WSDL_CONFIG["url"], transport=Transport(session=session))
-# service = client.service
-# factory = client.type_factory("ns0")
+session = Session()
+session.auth = HTTPBasicAuth(WSDL_CONFIG["user"], WSDL_CONFIG["password"])
+client = Client(WSDL_CONFIG["url"], transport=Transport(session=session))
+service = client.service
+factory = client.type_factory("ns0")
 
 
 class Geoposition:
@@ -115,7 +116,6 @@ class AddReview(View):
 )
 
 
-
 class SightseeingView(View):
     def get(self, request, *args, **kwargs):
 
@@ -138,3 +138,93 @@ class Booking(View):
         return render(request, 'booking/booking.html')
 
 
+def get_rooms_xml(xml_data):
+    root = ET.fromstring(xml_data)
+    result = []
+    for hotel_item in root:
+        hotel = {
+            "hotel": {
+                "id": hotel_item.attrib['id'],
+                "name": hotel_item.attrib["name"],
+                "eci": hotel_item.attrib["eci"],
+                "lco": hotel_item.attrib["lco"],
+                "checkin": hotel_item.attrib["ckeckin"],
+                "checkout": hotel_item.attrib["checkout"],
+                "address": hotel_item.attrib["Adres"],
+                "categories": []
+            }
+
+        }
+        for category_item in hotel_item:
+            if category_item.tag == "category":
+                category = {
+                    "id": category_item.attrib["id"],
+                    "name": category_item.attrib["name"],
+                    "rooms": []
+                }
+            for room_item in category_item:
+                if room_item.tag == "room":
+                    room = {
+                        "number": room_item.attrib["num"],
+                        "guests": room_item.attrib["addguests"],
+                        "twin": False if room_item.attrib["twin"] == "false" else True,
+                        "bathroom": room_item.attrib["bathroom"],
+                        "level": room_item.attrib["level"]
+                    }
+                    category["rooms"].append(room)
+            hotel["hotel"]["categories"].append(category)
+        result.append(hotel)
+    return result
+
+
+def get_hotel_info(hotel):
+    return {
+        "name": hotel["name"],
+        "id": hotel["id"],
+        "address": hotel["address"],
+        "eci": hotel["eci"],
+        "lco": hotel["lco"],
+        "checkin": hotel["checkin"],
+        "checkout": hotel["checkout"]
+    }
+
+
+def get_apartaments_info(hotel):
+    return [{"id": apartments_item["id"], "name": apartments_item["name"]} for apartments_item in hotel]
+
+
+def get_all_rooms(hotel):
+    rooms = []
+    for apartment in hotel:
+        for room_item in apartment["rooms"]:
+            room = {
+                "number": room_item["number"],
+                "guests": room_item["guests"],
+                "twin": room_item["twin"],
+                "bathroom": room_item["bathroom"],
+                "level": room_item["level"],
+                "apartment_type": apartment["name"]
+            }
+            rooms.append(room)
+    return rooms
+
+
+class GetRooms(View):
+
+    def get(self, request):
+        location = request.GET.get("location_field", "")
+        datn, datk = request.GET.get('datn', ''), request.GET.get('datk', '')
+        datn = "".join(datn.split("-")) + "140000"
+        datk = "".join(datk.split("-")) + "120000"
+
+        persons = request.GET.get("persons_field", '')
+        breakpoint()
+        result = service.GetNomSvobod(datn, datk)
+        result_json = get_rooms_xml(result)
+        result_json = result_json[1] if location == "Ekaterina II" else result_json[1]
+        hotel_info = get_hotel_info(result_json["hotel"])
+        all_apartaments = get_apartaments_info(result_json["hotel"]["categories"])
+        all_rooms = get_all_rooms(result_json["hotel"]["categories"])
+        print(location, datn, datk, persons)
+        # return redirect(request.META.get('HTTP_REFERER'))
+        return render(request, "booking/booking.html", {"rooms": all_rooms})

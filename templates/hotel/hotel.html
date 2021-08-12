@@ -61,10 +61,11 @@
             </div>
             <div class="container">
                 <div class="search-wrapper hotel">
-                    <form action="#" class="search">
+                    <form action="{% url "get_rooms" %}" class="search" method="get">
                         <div class="location-select-wrapper cust-sel">
                             <div class="location-header">
-                                <p class="selected-location">{% trans "Location" %}</p> <span class="arrow"></span>
+                                  <input type="text" class="selected-location" name="location_field" value="{% trans "Location" %}">
+                                <span class="arrow"></span>
                             </div>
                             <div class="location-types"> <label class="option-sel"> <span class="type-wrapper"> <input
                                             type="radio" name="date-field"> <span>Ekaterina</span> </span> <span
@@ -91,7 +92,8 @@
                             </label> </div>
                         <div class="location-select-wrapper cust-sel">
                             <div class="location-header">
-                                <p class="selected-location">{% trans "Persons" %}</p> <span class="arrow"></span>
+                                <input type="text" name="persons_field" value="{% trans "Persons" %}" class="selected-location" readonly>
+                                <span class="arrow"></span>
                             </div>
                             <div class="location-types"> <label class="option-sel"> <span class="type-wrapper"> <input
                                             type="radio" name="persons"> <span>1</span> </span> </label> <label

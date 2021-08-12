@@ -124,7 +124,8 @@
                             </div>
                         </div>
                         <div class="room-choice">
-                            <div class="room-choice__item">
+                            {% for room in rooms %}
+                            <div class="room-choice__item" style="margin-bottom: 20px;">
                                 <div class="room-image">
                                     <div class="room-image__header">
                                         <picture>
@@ -148,9 +149,9 @@
                                 <div class="room-types">
                                     <div class="room-types__type">
                                         <div class="room-types__info">
-                                            <p class="room-types__info-heading"> Bed only </p>
+                                            <p class="room-types__info-heading"> number: {{ room.number }} </p>
                                             <ul class="room-types__info-list">
-                                                <li class="room-types__info-li"> Breakfast not included; </li>
+                                                <li class="room-types__info-li"> bathroom: {{ room.bathroom }} </li>
                                                 <li class="room-types__info-li"> Free cancellation up to 7 days before
                                                     arrival; </li>
                                                 <li class="room-types__info-li"> Payment on arrival </li>
@@ -164,6 +165,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {% endfor %}
                         </div>
                         <div class="personal-information">
                             <form action="#" class="personal-information__form">
