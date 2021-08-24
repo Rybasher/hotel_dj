@@ -79,9 +79,16 @@
             let selected_language = document.querySelector(".lang-select__option.selected");
             let current_language = document.querySelector(".lang-select__trigger p");
             current_language.textContent = selected_language.textContent.toUpperCase();
+            let count = localStorage.getItem('count');
+            let cart_count = document.querySelector('.cart-count');
+            cart_count.innerHTML = count;
     </script>
     <script src="{% static 'js/app.min.js' %}"></script>
-
+    <script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script>
+    <script src="{% static 'js/cart.js' %}"></script>
     {% block scripts %}
 
     {% endblock %}

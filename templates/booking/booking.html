@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+
 {% load custom_filters %}
 
 
@@ -29,13 +31,13 @@
                     <div class="rooms">
                         <div class="room-search">
                             <div class="search-wrapper hotel">
-                                <form action="#" class="search">
+                                <form action="{% url "get_rooms" %}" class="search" method="get">
                                     <div class="search__actions">
                                         <div class="search__actions-row">
                                             <div class="location-select-wrapper cust-sel">
                                                 <div class="location-header">
-                                                    <p class="selected-location">Location</p> <span
-                                                        class="arrow"></span>
+                                                    <input type="text" class="selected-location" name="location_field" value="{% trans "Location" %}">
+                                <span class="arrow"></span>
                                                 </div>
                                                 <div class="location-types"> <label class="option-sel"> <span
                                                             class="type-wrapper"> <input type="radio" name="date-field">
@@ -49,14 +51,14 @@
                                                         </span> <span class="street"></span> </label> </div>
                                             </div>
                                             <div class="arriving-wrapper date-field"> <label> <input type="text"
-                                                        class="date-input" placeholder="Arriving">
+                                                        class="date-input daten" name="datn" placeholder="Arriving">
                                                     <picture>
                                                         <source srcset="{% static 'img/header/calendar.svg' %}" type="image/webp"><img
                                                             src="{% static 'img/header/calendar.svg' %}" alt="callendar">
                                                     </picture>
                                                 </label> </div>
                                             <div class="leaving-wrapper date-field"> <label> <input type="text"
-                                                        class="date-input" placeholder="Leaving">
+                                                        class="date-input datek" name="datk" placeholder="Leaving">
                                                     <picture>
                                                         <source srcset="{% static 'img/header/calendar.svg' %}" type="image/webp"><img
                                                             src="{% static 'img/header/calendar.svg' %}" alt="callendar">
@@ -78,37 +80,317 @@
                                         <div class="search__actions-row">
                                             <div class="location-select-wrapper cust-sel">
                                                 <div class="location-header">
-                                                    <p class="selected-location">Location</p> <span
-                                                        class="arrow"></span>
+                                                    <input type="text" name="persons_field" value="{% trans "Persons" %}" class="selected-location" readonly>
+                                <span class="arrow"></span>
                                                 </div>
-                                                <div class="location-types"> <label class="option-sel"> <span
-                                                            class="type-wrapper"> <input type="radio" name="date-field">
-                                                            <span>Ekaterina</span> </span> <span class="street">(25
-                                                            Grecheskaya str.)</span> </label> <label class="option-sel">
-                                                        <span class="type-wrapper"> <input type="radio"
-                                                                name="date-field"> <span>Ekaterina II</span> </span>
-                                                        <span class="street">(7 Ekaterininskaya str.)</span> </label>
-                                                    <label class="option-sel"> <span class="type-wrapper"> <input
-                                                                type="radio" name="date-field"> <span>Both</span>
-                                                        </span> <span class="street"></span> </label> </div>
+
                                             </div>
-                                            <div class="arriving-wrapper date-field"> <label> <input type="text"
-                                                        class="date-input" placeholder="Arriving">
-                                                    <picture>
-                                                        <source srcset="{% static 'img/header/calendar.svg' %}" type="image/webp"><img
-                                                            src="{% static 'img/header/calendar.svg' %}" alt="callendar">
-                                                    </picture>
-                                                </label> </div>
-                                            <div class="leaving-wrapper date-field"> <label> <input type="text"
-                                                        class="date-input" placeholder="Leaving">
-                                                    <picture>
-                                                        <source srcset="{% static 'img/header/calendar.svg' %}" type="image/webp"><img
-                                                            src="{% static 'img/header/calendar.svg' %}" alt="callendar">
-                                                    </picture>
-                                                </label> </div>
+                                              <div class="location-select-wrapper cust-sel">
+                                                <div class="location-header">
+                                                    <input type="text" class="selected-location checkin-field" name="checkin_field" value="{% trans "Checkin" %}">
+                                <span class="arrow"></span>
+                                                </div>
+                                                <div class="location-types" style="height: 300px; overflow: auto">
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>0:00</span>
+                                                        </span> </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>1:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>2:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>3:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>4:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>5:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>6:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>7:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>8:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>9:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>10:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>11:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>12:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>13:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>14:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>15:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>16:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>17:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>18:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>19:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>20:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>21:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>22:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>23:00</span>
+                                                        </span>
+                                                    </label>
+                                                </div >
+                                            </div>
                                             <div class="location-select-wrapper cust-sel">
                                                 <div class="location-header">
-                                                    <p class="selected-location">Persons</p> <span class="arrow"></span>
+                                                       <input type="text" class="selected-location checkout-field" name="checkout_field" value="{% trans "Checkout" %}">
+                                <span class="arrow"></span>
+                                                </div>
+                                                <div class="location-types" style="height: 300px; overflow: auto">
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>0:00</span>
+                                                        </span> </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>1:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>2:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>3:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>4:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>5:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>6:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>7:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>8:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>9:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>10:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>11:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>12:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>13:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>14:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>15:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>16:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>17:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>18:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>19:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>20:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>21:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>22:00</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="option-sel">
+                                                        <span class="type-wrapper">
+                                                            <input type="radio" name="persons">
+                                                            <span>23:00</span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="location-select-wrapper cust-sel">
+                                                <div class="location-header">
+                                                    <p class="selected-location">Childs</p> <span class="arrow"></span>
                                                 </div>
                                                 <div class="location-types"> <label class="option-sel"> <span
                                                             class="type-wrapper"> <input type="radio" name="persons">
@@ -134,7 +416,7 @@
                                         </picture>
                                     </div>
                                     <div class="room-image__body">
-                                        <p class="room-image__title">Double Standart Suite</p>
+                                        <p class="room-image__title">{{ room.name }}</p>
                                         <p class="room-image__desc">20 m<sup>2</sup> with balcony</p>
                                         <div class="room-image__type">
                                             <p>Double</p>
@@ -146,28 +428,48 @@
                                         </div> <a href="#" class="room-image__more">More room details</a>
                                     </div>
                                 </div>
-                                <div class="room-types">
-                                    <div class="room-types__type">
+                                <div class="room-types" >
+                                    {% for tarif in room.tariffs %}
+                                    <div class="room-types__type" data-tarifid="{{ room.id }}{{ tarif.id }}" style="margin-bottom: 20px;">
                                         <div class="room-types__info">
-                                            <p class="room-types__info-heading"> number: {{ room.number }} </p>
+                                            <p class="room-types__info-heading">{{ tarif.name }} </p>
+                                            {{ tarif.hotel_id }}
+                                        <p>{{ tarif.description }}</p>
                                             <ul class="room-types__info-list">
-                                                <li class="room-types__info-li"> bathroom: {{ room.bathroom }} </li>
-                                                <li class="room-types__info-li"> Free cancellation up to 7 days before
-                                                    arrival; </li>
-                                                <li class="room-types__info-li"> Payment on arrival </li>
+                                                {% for room_item in room.rooms %}
+                                                    {% if room_item.category_id == room.id %}
+
+                                                        {% for option in room_item.option %}
+                                                            <li class="room-types__info-li"> {{ option.option }} </li>
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                {% endfor %}
+{#                                                {% for r in room.rooms %}#}
+{#                                                    {% for option in r.option %}#}
+{##}
+{#                                                         <li class="room-types__info-li"> {{ option.option }} </li>#}
+{#                                                        {% endfor %}#}
+{#                                                    {% endfor %}#}
                                             </ul>
                                         </div>
                                         <form action="" class="room-types__form">
                                             <div class="price"> <span>per night</span>
-                                                <p class="price__text"> € 255 </p>
-                                            </div> <button>Add</button>
+                                                <p class="price__text"> {{ tarif.price.roomprice }} </p>
+                                            </div> <button class="booking-add"
+                                                           data-tariffid="{{ tarif.id }}"
+                                                           data-tariff="{{ tarif.name }}"
+                                                           data-tariffPrice="{{ tarif.price.roomprice }}"
+                                                           data-category="{{ room.name }}"
+                                        data-categoryid="{{ room.id }}" data-hotelid="{{ room.hotel_id }}"
+                                                           data-datn="{{ datn }}" data-datk="{{ datk }}">Add</button>
                                         </form>
                                     </div>
+                                        {% endfor %}
                                 </div>
                             </div>
                             {% endfor %}
                         </div>
-                        <div class="personal-information">
+                        <div class="personal-information hidden">
                             <form action="#" class="personal-information__form">
                                 <h3 class="personal-information__heading"> personal information </h3>
                                 <div class="inputs">
@@ -197,7 +499,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="reciept">
+                        <div class="reciept hidden">
                             <div class="reciept__agree">
                                 <div class="reciept__form"> <label> <input type="checkbox" name="company_policy">
                                         <span>I agree to the <span class="company-policy">Company policy</span> and
@@ -300,22 +602,14 @@
                                 <p class="to-date">24.11.2020 <span>(Tue)</span></p>
                             </div>
                             <p class="stay__people">2 Adults & 1 child</p>
-                            <div class="room-items">
-                                <div class="room-item">
-                                    <div class="room-item__wrapper">
-                                        <div class="cancel"> <span></span> <span></span> </div>
-                                        <p class="room-item__name">Double Standart Suite</p>
-                                        <p class="room-item__price">€ 1 355</p>
-                                        <div class="room-item__more-info"> <span></span> <span></span> </div>
-                                    </div>
-                                    <p class="room-item__dop">Bed & breakfast</p>
-                                </div>
+                            <div class="room-items cart-items">
+
                             </div>
                             <div class="stay__total">
                                 <div class="stay__total-price-wrapper">
                                     <p class="stay__total-price-text">TOTAL</p>
-                                    <p class="stay__total-price">€ 1 355</p>
-                                </div> <button class="stay__total-button">Continue</button>
+                                    <p class="stay__total-price">€ 0</p>
+                                </div> <button class="stay__total-button filtration">Continue</button>
                             </div>
                         </div>
                     </div>
@@ -325,6 +619,10 @@
 {% endblock %}
 
 {% block scripts %}
+    <script>
 
+    </script>
+    <script src="{% static 'js/data.js' %}"></script>
+    <script src="{% static 'js/booking.js' %}"></script>
 
 {% endblock %}

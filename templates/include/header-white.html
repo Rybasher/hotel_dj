@@ -33,12 +33,17 @@
                         <li class="menu__li">
                             <p class="menu__link subbed">{% trans "Our Hotels" %}</p>
                             <ul class="menu__sub-list">
-                                <li class="menu__sub-li">
-                                    <a href="{% url 'hotel' %}" class="menu__sub-link">Ekaterina</a>
-                                </li>
-                                <li class="menu__sub-li">
-                                    <a href="{% url 'hotel' %}" class="menu__sub-link">Ekaterina II</a>
-                                </li>
+                               {% if hotels %}
+                                {% for hotel in hotels %}
+                                    <li class="menu__sub-li">
+									<a href="{% url 'hotel' hotel.slug %}" class="menu__sub-link">{{ hotel.name }}</a>
+								</li>
+                               {% endfor %}
+                                {% else %}
+                                    <li class="menu__sub-li">
+									<a href="{% url 'hotel' hotel.slug %}" class="menu__sub-link">{{ hotel.name }}</a>
+								</li>
+                            {% endif %}
                             </ul>
                         </li>
                         <li class="menu__li">
@@ -76,14 +81,14 @@
             </a>
             <div class="actions">
                 <a href="{% url "booking" %}">
-                    <button class="actions__cart cart" id="cart">
-                        <svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M16 11.75V6.75C16 5.42392 15.4732 4.15215 14.5355 3.21447C13.5979 2.27678 12.3261 1.75 11 1.75C9.67392 1.75 8.40215 2.27678 7.46447 3.21447C6.52678 4.15215 6 5.42392 6 6.75V11.75H16ZM2.25 9.25H19.75L21 24.25H1L2.25 9.25Z"
-                                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </button>
+                    	<button class="actions__cart cart" id="cart" style="position: relative">
+					<svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M16 11.75V6.75C16 5.42392 15.4732 4.15215 14.5355 3.21447C13.5979 2.27678 12.3261 1.75 11 1.75C9.67392 1.75 8.40215 2.27678 7.46447 3.21447C6.52678 4.15215 6 5.42392 6 6.75V11.75H16ZM2.25 9.25H19.75L21 24.25H1L2.25 9.25Z"
+							stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+                    <span class="cart-count" style="position: absolute; top: 0; right: 0; width: 20px;height: 20px; border-radius: 50%; background: red;"></span>
+				</button>
                 </a>
                 {% get_current_language as LANGUAGE_CODE %}
                 {% get_available_languages as LANGUAGES %}

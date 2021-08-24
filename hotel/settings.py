@@ -165,6 +165,29 @@ EMAIL_USE_SSL = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+
+UPC_CONFIG = {
+    'version': 1,
+    #  старое клише
+    #    'merchantId' => '6346563',
+    #    'terminalId' => 'E0139545',
+    #  новое клише
+    'merchantId': '6166113',
+    'terminalId': 'E0118237',
+    #  второе новое клише
+    #    'merchantId' => '6237285',
+    #    'terminalId' => 'E0119612',
+    'currency': '980',
+    'dateFormat': '%y%m%d%H%M%S',
+    'serverPub': 'security/work-server.pub',
+    'privateKey': 'security/6166113.pem',
+    'gatewayURL': 'https://secure.upc.ua/go/enter',
+    'successURL': 'http://hotel-ekaterina.com.ua/#/success',
+    'failureURL': 'http://hotel-ekaterina.com.ua/#/failure'
+
+}
+
+
 WSDL_CONFIG = {
     'url': 'http://192.168.9.228/gostproba/ws/ObmenSait_ws1.1cws?wsdl',
     'user': 'sait',

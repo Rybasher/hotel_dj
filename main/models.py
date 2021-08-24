@@ -167,8 +167,9 @@ class Video(models.Model):
 
 
 class Hotel(models.Model):
-    hotel_id = models.CharField(max_length=16, primary_key=True, unique=True)
+    hotel_id = models.CharField(max_length=16, primary_key=True, unique=True, db_index=True)
     name = models.CharField(max_length=32)
+    image = models.ImageField(upload_to=f"hotels/", default=None)
     slug = models.SlugField(unique=True)
     early_check_in = models.CharField(max_length=2, choices=_HOUR_RANGE)
     late_check_out = models.CharField(max_length=2, choices=_HOUR_RANGE)
@@ -186,6 +187,12 @@ class Hotel(models.Model):
 
     def get_absolute_url(self):
         return reverse('hotel_detail', kwargs={'slug': self.slug})
+
+class HotelSight(models.Model):
+    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE)
+    title = models.CharField(max_length=1000, verbose_name="Название достопремичательности")
+    description = models.TextField()
+    image = models.ImageField(upload_to="hotel_sight/")
 
 
 class Category(models.Model):
@@ -208,7 +215,7 @@ class Room(models.Model):
     twin = models.BooleanField()
     bathroom = models.CharField(max_length=32)
     level = models.IntegerField(choices=_LEVELS)
-    option = models.CharField(max_length=32, null=True)
+    option = models.CharField(max_length=32, null=True, blank=True)
     category_id = models.CharField(max_length=16)
     hotel_id = models.ForeignKey('Hotel', on_delete=models.CASCADE)
     timestamp = models.DateTimeField(default=datetime.datetime.utcnow)

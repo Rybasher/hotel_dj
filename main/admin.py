@@ -37,8 +37,13 @@ class SocialMediaAdmin(admin.ModelAdmin):
 
 @admin.register(Hotel)
 class HotelAdmin(admin.ModelAdmin):
-    list_display = ['hotel_id', 'name', 'address']
+    list_display = ['hotel_id', 'name', 'image', 'address']
     prepopulated_fields = {'slug': ('name',)}
+
+
+@admin.register(HotelSight)
+class HotelSightAdmin(admin.ModelAdmin):
+    list_display = ['title', 'image']
 
 
 @admin.register(Category)
@@ -50,7 +55,6 @@ class CategoryAdmin(admin.ModelAdmin):
 class RoomAdmin(admin.ModelAdmin):
     list_display = ['hotel_id', 'category_id', 'number']
     prepopulated_fields = {'slug': ('number',)}
-
 
 
 admin.site.register(RoomImage)
